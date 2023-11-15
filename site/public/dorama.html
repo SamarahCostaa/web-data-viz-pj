@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/tela-dorama.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="frase" id="div_bemvindo">Bem-vinda Samarah!</div>
+            <div class="imagem-perfil">
+                 <img src="./assets/imagens/minha-foto.png" class="perfil-editado">
+            </div>
+            <div class="navbar">
+                <ul>
+                   <li><a href="./tela-perfil.html" class="borda menu-item">Meu Perfil</a></li>        
+                   <li><a href="#" class="menu-selecionado">Doramas</a></li>        
+                   <li><a href="#" class="borda menu-item">Quiz</a></li>        
+                   <li><a href="#" class="borda menu-item">Análise</a></li>        
+                   <li><a href="./tela-login.html" class="borda menu-item">Sair</a></li>        
+                </ul>   
+            </div>
+        </div>
+        <div class="dividindo-tela"></div>
+    </div>
+
+    <div class="publicacoes">
+        <div class="post">
+            <div class="borda-img">
+                <img src="https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2022/08/16/1124744466-the-extraordinary-attorney-woo.jpg" class="img-editada">
+            </div>
+
+            <div class="descricao">
+            Uma garota graduada recentimente em direito é reconhecida como a melhor advogada de Seul e, com apoio do pai, garante sua primeira posição em uma empresa de renomada. Contudo, ao se juntar à equipe, enfrenta desafios devido à falta de preparo do ambiente para recebê-la, sobretudo pela incompreensão de alguns colegas quanto à sua condição autista.
+
+            <div class="caixa-comentar">
+                <div class="linha-1">
+                 <input type="text" id="input_comentario" placeholder="Escreva seu comentario" class="caixa">
+                 <button onclick="comentar()" class="botao">Comentar</button>
+                </div>  
+                
+                <div class="linha-2">
+                    <div id="div_comentarios" style="display: block;">
+                        Samarah: Nossa, esse dorama é incrivél!!
+                    </div>
+                    <div class="exibir-apagar">
+                        <button onclick="exibir()" class="botao-menor">Ver comentarios</button>
+                        <br>
+                        <button onclick="apagar()" class="botao-menor">Ver menos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="post">
+            <div class="borda-img">
+                <img src="https://i0.wp.com/www.geekguia.com.br/wp-content/uploads/2022/05/Pretendente-Surpresa-Capa.jpg?fit=2160%2C1258&amp;ssl=1" class="img-editada">
+            </div>
+
+            <div class="descricao">
+                Shin Ha-ri desenvolve uma paixão por um colega de trabalho, mas fica desanimada ao descobrir que ele já tem uma namorada. Para desabafar, Ha-ri concorda em se passar por sua amiga rica, Jin Young-seo, em um encontro às cegas que ela não quer participar. No entanto, o encontro é com Kang Tae-mu, CEO da empresa onde Ha-ri trabalha, e ele está participando por pressão familiar. Tae-mu, um jovem focado no trabalho, decide casar-se rapidamente para não prejudicar seus objetivos profissionais, surpreendendo Ha-ri.
+
+            <div class="caixa-comentar">
+                <div class="linha-1">
+                 <input type="text" id="input_comentario" placeholder="Escreva seu comentario" class="caixa">
+                 <button onclick="comentar()" class="botao">Comentar</button>
+                </div>  
+                
+                <div class="linha-2">
+                    <div id="div_comentarios" style="display: block;">
+                        Samarah: Nossa, esse dorama é incrivél!!
+                    </div>
+                    <div class="exibir-apagar">
+                        <button onclick="exibir()" class="botao-menor">Ver comentarios</button>
+                        <br>
+                        <button onclick="apagar()" class="botao-menor">Ver menos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var lista_comentario = [];
+    function comentar(){
+        var comentario = input_comentario.value;
+
+        lista_comentario.push(comentario);
+
+    
+
+        // div_comentarios.innerHTML += `<br> Usuario: ${comentario}`;
+    }
+
+
+</script>

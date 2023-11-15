@@ -1,0 +1,387 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: 0;  
+     font-family:'Courier New', Courier, monospace;
+     font-size: 16px;
+
+}
+
+html{
+     scroll-behavior: smooth; /*quando clicar no link a rolagem da tela será mais suave*/
+}
+
+body{
+     /* height: 500%; */
+     background-color: #D6A07E;
+}
+
+li{
+     text-align: none;
+     list-style-type: none;
+     display: inline;
+     padding: 10px;
+}
+
+
+/* HEADER  */
+a{
+     text-decoration: none; 
+     color: #BC664D;   
+}
+
+.header{
+     display: flex;
+     width: 100%;
+     height: 95px;
+     background-color: #F8C4B5;
+     position: fixed;
+}
+
+.container{
+     display: flex;
+     width: 80%;
+     height: 100%;
+     margin: 0 10%;
+     justify-content: space-between;
+     align-items: center;   
+}
+.imagem-logo{
+     display: flex;
+     width: 80px;
+     height: 70px;
+     padding: 10px 0 20px 1px;
+}
+.navbar{
+     display: flex; 
+     justify-content: space-between;
+     align-items: center; 
+}
+
+
+/* COMEÇO DO SITE */
+.imagem-inicial{
+     display: flex;
+     width: 100%;
+     padding: 95px 0;
+}
+
+.texto{
+     display: flex;
+     padding: 0 0 50px 0;
+     margin-top: -250px;
+     font-size: 50px;
+     justify-content: center;
+     color: #FFF5E1;
+}
+
+
+/* SOBRE MIM */
+.titulo-do-topico{
+     display: flex;
+     width: 100%;
+     height: 30vh;
+     padding-top: 20px;
+     justify-content: center;
+}
+
+.box-sobremim{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+
+.texto-titulo{
+     display: flex;
+}
+
+.titulo{
+     display: flex;
+     padding: 110px 0 20px 0;
+     font-size: 25px;
+     color: #BC664D;
+     justify-content: center;
+}
+
+.descricao{
+     display: flex;
+     width: 55%;
+     padding-top: 15px;
+     text-align: center; /*as palavras ficaram centralizadas*/
+     font-size: 18px;
+}
+.boxes{
+     display: flex;
+     width: 100%;
+     padding-top: 50px;
+     justify-content: center;
+     align-items: center;
+     flex-direction: row;
+}
+
+.imagem-valores{
+     display: flex;
+     height: 20vh;
+}
+
+.boxe-respeito{
+     display: flex;
+     width: 25%;
+     height: 45vh;
+     padding: 8px;
+     border-radius: 5px;
+     box-shadow: 0 0 10px 4px #bf9385;
+     background-color: #F8C4B5;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     text-align: center;
+}
+
+.boxe-divirta-se{
+     display: flex;
+     width: 25%;
+     height: 45vh;
+     padding: 8px;
+     margin: 20px 30px;
+     border-radius: 5px;
+     box-shadow: 0 0 10px 4px #bf9385;
+     background-color: #F8C4B5;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     text-align: center;
+}
+
+.boxe-conexao{
+     display: flex;
+     width: 25%;
+     height: 45vh;
+     border-radius: 5px;
+     padding: 8px;
+     box-shadow: 0 0 10px 4px #bf9385;
+     background-color: #F8C4B5;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     text-align: center;
+}
+
+
+/* O QUE SÃO DORAMAS */
+.box-pousando{
+     display: flex;
+     width: 100%;
+     justify-content: center;
+     /* margin-top: 2px; */
+}
+.banner-pousando-no-amor{
+     display: flex;
+     width: 100%;
+     margin: 0 1px 0 -75px;
+     align-items: center;
+     justify-content: center;
+}
+
+.img-pousando{
+     display: flex;
+     width: 80%;
+     height: 50vh;
+     box-shadow: 0 0 10px 4px #bf9385;
+}
+
+.borda-externa-img{
+    display: flex;
+    width: 55%;
+    height: 60vh;
+    background-color: #F8C4B5;
+    justify-content: center;
+    align-items: center;
+}
+
+.borda-externa{
+     display: flex;
+     width: 55%;
+     height: 60vh;
+     margin: 0 118px 0 1px;
+     background-color: #F8C4B5;
+     justify-content: center;
+     align-items: center;
+}
+
+.borda-interna{
+     display: flex;
+     width: 88%;
+     height: 53vh;
+     box-shadow: 0 0 10px 4px #bf9385;
+     background-color: #DC8069;
+
+}
+
+.texto-oque-e{
+     display: flex;
+     width: 90%;
+     padding: 25px;
+     justify-content: center;
+     flex-direction: column;
+}
+
+
+/* O QUE SÃO DORAMAS SEGUNDO BOX */
+.box-oque-e-dorama2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.borda-externa2{
+     display: flex;
+     width: 90%;
+     height: 70vh;
+     margin: 90px 118px 0 117px;
+     background-color: #F8C4B5;
+     justify-content: center;
+     align-items: center;
+}
+
+.borda-interna2{
+    display: flex;
+    width: 50%;
+    height: 60vh;
+    margin: 0 0 0 40px;
+    box-shadow: 0 0 10px 4px #bf9385;
+    background-color: #BC664D;
+    justify-content: center;
+}
+
+.imagem-box2{
+    display: flex;
+    width: 80%;
+    height: 60vh;
+    margin: 0 -30px 0 90px;
+    box-shadow: 0 0 10px 8px #bf9385;
+
+}
+
+
+/* VOCÊ SABIA  */
+.box-voce-sabia{
+    display: flex;
+    align-items: center;
+    padding: 50px 0 0 119px;
+}
+
+.borda-externa-img-voce-sabia{
+    display: flex;
+    width: 37%;
+    height: 70vh;
+    background-color: #F8C4B5;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem-voce-sabia{
+    display: flex;
+    width: 82%;
+    height: 60vh;
+    box-shadow: 0 0 10px 4px #bf9385;
+}
+
+.borda-externa3{
+     display: flex;
+     width: 37%;
+     height: 70vh;
+     margin: 0 0 0 204px;
+     background-color: #F8C4B5;
+     justify-content: center;
+     align-items: center;
+}
+.borda-interna3{
+     display: flex;
+     width: 86%;
+     height: 60vh;
+     background-color: #BC664D;
+     box-shadow: 0 0 10px 4px #bf9385;
+     /* justify-content: center;
+     align-items: center; */
+}
+
+.texto-sabia{
+     display: flex;
+     width: 100%;
+     padding: 10px 15px;
+     justify-content: center;
+     flex-direction: column;
+}
+
+
+/* VOCÊ SABIA SEGUNDA BOX */
+
+.box-voce-sabia2{
+      display: flex;
+      align-items: center;
+      padding: 50px 0 0 119px;
+      justify-content: center;
+}
+
+.borda-externa4{
+     display: flex;
+     width: 83%;
+     height: 70vh;
+     margin: 90px 0 0 119px;
+     background-color: #F8C4B5;
+     align-items: center; 
+}
+
+.borda-interna4{
+     display: flex;
+     width: 44%;
+     height: 60vh;
+     margin-left: 40px;
+     box-shadow: 0 0 10px 4px #bf9385;
+     background-color: #BC664D;
+}
+
+.imagem-voce-sabia2{
+     display: flex;
+     width: 80%;
+     height: 60vh;
+     margin: 0 30px 0 120px;
+     box-shadow: 0 0 10px 8px #bf9385;
+}
+
+.botao{
+     background-color: #BC664D;
+     display: flex;
+     padding: 5px;
+     color: #F8C4B5;
+     border-radius: 2px;
+}
+
+.footer{
+     margin-top: 100px;
+     display: flex;
+     flex-direction: column;
+     height: 20vh;
+     background-color: #BC664D;
+     justify-content: center;
+     align-items: center;
+}
+
+.regras{
+     margin-top: 10px;
+      color: #F8C4B5;
+}
+.plataforma{
+     margin: 40px 0 0 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.icone-footer{
+     display: inline;
+     width: 30px;
+     padding: 10px;
+     border-radius: 8px;
+}
