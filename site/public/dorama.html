@@ -15,36 +15,35 @@
             </div>
             <div class="navbar">
                 <ul>
-                   <li><a href="./tela-perfil.html" class="borda menu-item">Meu Perfil</a></li>        
+                   <li><a href="./perfil.html" class="borda menu-item">Meu Perfil</a></li>        
                    <li><a href="#" class="menu-selecionado">Doramas</a></li>        
                    <li><a href="#" class="borda menu-item">Quiz</a></li>        
-                   <li><a href="#" class="borda menu-item">Análise</a></li>        
-                   <li><a href="./tela-login.html" class="borda menu-item">Sair</a></li>        
+                   <li><a href="./dashboard.html" class="borda menu-item">Análise</a></li>        
+                   <li><a href="./login.html" class="borda menu-item">Sair</a></li>        
                 </ul>   
             </div>
         </div>
-        <div class="dividindo-tela"></div>
     </div>
 
     <div class="publicacoes">
+        
+        <!-- PRIMEIRA PUBLICAÇÃO -->
         <div class="post">
             <div class="borda-img">
                 <img src="https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2022/08/16/1124744466-the-extraordinary-attorney-woo.jpg" class="img-editada">
             </div>
 
-            <div class="descricao">
-            Uma garota graduada recentimente em direito é reconhecida como a melhor advogada de Seul e, com apoio do pai, garante sua primeira posição em uma empresa de renomada. Contudo, ao se juntar à equipe, enfrenta desafios devido à falta de preparo do ambiente para recebê-la, sobretudo pela incompreensão de alguns colegas quanto à sua condição autista.
+            <div class="descricao"> 
+            Uma garota graduada recentemente em direito é reconhecida como a melhor advogada de Seul e, com apoio do pai, garante sua primeira posição em uma empresa de renomada. Contudo, ao se juntar à equipe, enfrenta desafios devido à falta de preparo do ambiente para recebê-la, sobretudo pela incompreensão de alguns colegas quanto à sua condição autista.
 
             <div class="caixa-comentar">
                 <div class="linha-1">
-                 <input type="text" id="input_comentario" placeholder="Escreva seu comentario" class="caixa">
+                 <input type="text" id="input_comentario1" placeholder="Escreva seu comentario" class="caixa">
                  <button onclick="comentar()" class="botao">Comentar</button>
                 </div>  
                 
                 <div class="linha-2">
-                    <div id="div_comentarios" style="display: block;">
-                        Samarah: Nossa, esse dorama é incrivél!!
-                    </div>
+                    <div id="div_comentario1" class="exibindo"></div>
                     <div class="exibir-apagar">
                         <button onclick="exibir()" class="botao-menor">Ver comentarios</button>
                         <br>
@@ -55,6 +54,8 @@
         </div>
         </div>
 
+
+        <!-- SEGUNDA PUBLICAÇÃO -->
         <div class="post">
             <div class="borda-img">
                 <img src="https://i0.wp.com/www.geekguia.com.br/wp-content/uploads/2022/05/Pretendente-Surpresa-Capa.jpg?fit=2160%2C1258&amp;ssl=1" class="img-editada">
@@ -65,14 +66,12 @@
 
             <div class="caixa-comentar">
                 <div class="linha-1">
-                 <input type="text" id="input_comentario" placeholder="Escreva seu comentario" class="caixa">
+                 <input type="text" id="input_comentario2" placeholder="Escreva seu comentario" class="caixa">
                  <button onclick="comentar()" class="botao">Comentar</button>
                 </div>  
                 
                 <div class="linha-2">
-                    <div id="div_comentarios" style="display: block;">
-                        Samarah: Nossa, esse dorama é incrivél!!
-                    </div>
+                    <div id="div_comentario2" class="exibindo"></div>
                     <div class="exibir-apagar">
                         <button onclick="exibir()" class="botao-menor">Ver comentarios</button>
                         <br>
@@ -86,16 +85,45 @@
 </body>
 </html>
 <script>
-    var lista_comentario = [];
+    var lista_comentario1 = [];
+    var lista_comentario2 = [];
+
     function comentar(){
-        var comentario = input_comentario.value;
+        var comentario1 = input_comentario1.value;
+        var comentario2 = input_comentario2.value;
 
-        lista_comentario.push(comentario);
+        if(comentario1 != ''){
+        lista_comentario1.push(comentario1);
+        div_comentario1.innerHTML +=  `${comentario1}<br>`
+        } else if(comentario2 != ''){
+            lista_comentario2.push(comentario2);
+            div_comentario2.innerHTML +=  `${comentario2}<br>`
 
-    
-
-        // div_comentarios.innerHTML += `<br> Usuario: ${comentario}`;
+        }
     }
 
+    function apagar(){
+        div_comentario1.innerHTML =  ``;
+        div_comentario2.innerHTML =  ``;
+    }
+
+    function exibir(){
+        var comentario1 = input_comentario1.value;
+        var comentario2 = input_comentario1.value;
+        
+        if(comentario1){
+        for(var i = 0; i < lista_comentario1.length; i++){
+            lista_comentario1[i];
+            div_comentario1.innerHTML += `${lista_comentario1[i]}<br>`;
+        }
+    }
+        if(comentario2){
+        for(var i = 0; i < lista_comentario2.length; i++){
+            lista_comentario2[i];
+            div_comentario2.innerHTML += `${lista_comentario2[i]}<br>`;
+        }
+    }
+
+    }
 
 </script>

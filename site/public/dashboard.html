@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/tela-dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="./js/dashboard.js"></script> -->
+    
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+
+            <div class="frase" id="div_bemvindo">Bem-vinda Samarah!</div>
+            <div class="imagem-perfil">
+                 <img src="./assets/imagens/minha-foto.png" class="perfil-editado">
+            </div>
+
+            <div class="navbar">
+                <ul>
+                 <li><a href="./perfil.html" class="borda menu-item">Meu Perfil</a></li>        
+                 <li><a href="./dorama.html" class="borda menu-item">Doramas</a></li>        
+                 <li><a href="#" class="borda menu-item">Quiz</a></li>        
+                 <li><a href="#" class="menu-selecionado">Dashboard</a></li>        
+                 <li><a href="./login.html" class="borda menu-item">Sair</a></li>        
+                </ul>   
+            </div> <!-- FINAL DA NAVBAR -->
+
+        </div> <!-- FINAL DO CONTAINER -->
+    </div> <!-- FINAL DO HEADER -->
+
+    <div class="corpo">
+        <div class="grafico-1 ">
+            <div class="genero">
+                <div class="titulo">Categorias mais assistidas  :</div>
+                <canvas id="myChart2"></canvas>
+            </div>
+
+            <div class="pizza">
+                <div class="titulo margin">Cidades de São Paulo que mais consomem doramas</div>
+                <canvas id="myChart3"></canvas>
+
+                
+                <div class="legenda">
+                    <div class="feminino">São Paulo</div>
+                    <div class="masculino">Jundiai</div>
+                    <div class="outro">Rio de Janeiro</div>
+                    <div class="outro-2">Campinas</div>
+                </div>
+            </div>
+            <!-- <div class="borda-externa">
+                <div class="borda-interna">
+                    <p>Geralmente, o publico alvo de doramas romanticos são as mulheres, isso porque muitas pessoas acham que doramas são apenas séries romanticas.</p>
+                </div>
+            </div> -->
+        </div>
+        <div class="grafico-1">
+            <!-- <div class="borda-externa">
+                <div class="borda-interna">
+                    <p>Geralmente, o publico alvo de doramas romanticos são as mulheres, isso porque muitas pessoas acham que doramas são apenas séries romanticas.</p>
+                </div>
+            </div> -->
+            <div class="genero">
+                <div class="titulo">Faxa etária dos dorameiros(as):</div>
+                <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+                <!-- <div class="legenda">
+                    <div class="feminino">Menor que 15</div>
+                    <div class="masculino"></div>
+                    <div class="outro">Outro</div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const labels = ['Idades'] /*No eixo X esses são os dados*/
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: '0 á 15',
+                backgroundColor: 'rgb(0, 203, 219)',
+                borderColor: 'rgb(2,0,127)',
+                data: [10], /*dados inseridos no grafico*/
+                borderWidth: 1
+            },
+            {
+                label: '18 á 25',
+                backgroundColor: 'rgb(255, 255, 153)',
+                borderColor: 'rgb(204, 204, 0)',
+                data: [30], /*dados inseridos no grafico*/
+                borderWidth: 1
+            },
+            {
+                label: 'Maior que 25',
+                backgroundColor: 'rgb(248, 196, 181)',
+                borderColor: 'rgb(200, 0, 127)',
+                data: [25], /*dados inseridos no grafico*/
+                borderWidth: 1
+            }
+        
+        ]
+        };
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                indexAxis: 'y',
+    // Elements options apply to all of the options unless overridden in a dataset
+    // In this case, we are setting the border of each horizontal bar to be 2px wide
+    elements: {
+      bar: {
+        borderWidth: 2,
+      }
+    },
+            }
+        };
+
+        // Segundo gráfico
+
+        const labels2 = ['Categoria'];
+        const data2 = {
+    labels: labels2,
+    datasets: [
+        {
+            label: 'Romance',
+            backgroundColor: 'rgb(248, 196, 181)',
+            borderColor: 'rgb(200, 0, 127)',
+            data: [40], /*dados inseridos no grafico*/
+            borderWidth: 1
+        },
+        {
+            label: 'Suspense',
+            backgroundColor: 'rgb(255, 255, 153)',
+            borderColor: 'rgb(204, 204, 0)',
+            data: [33], /*dados inseridos no grafico*/
+            borderWidth: 1
+        },
+        {
+            label: 'Ação',
+            backgroundColor: 'rgb(0, 203, 219)',
+            borderColor: 'rgb(2, 0, 127)',
+            data: [10], /*dados inseridos no grafico*/
+            borderWidth: 1
+        },
+        {
+            label: 'Sobrevivencia',
+            backgroundColor: 'rgb(150, 203, 0)',
+            borderColor: 'rgb(33, 100, 0)',
+            data: [30], /*dados inseridos no grafico*/
+            borderWidth: 1
+        }
+    ]
+};
+
+        const config2 = {
+            type: 'bar',
+            data: data2,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        };
+
+        
+        const labels3 = [];
+        const data3 = {
+    labels: labels3,
+    datasets: [
+        {
+            label: 'São Paulo',
+            backgroundColor: 'rgb(248, 196, 181)',
+            borderColor: 'rgb(200, 0, 127)',
+            data: [40], /*dados inseridos no grafico*/
+            borderWidth: 1
+        },
+        {
+            label: 'Rio de Janeiro',
+            backgroundColor: 'rgb(255, 255, 153)',
+            borderColor: 'rgb(204, 204, 0)',
+            data: [10], /*dados inseridos no grafico*/
+            borderWidth: 1
+        },
+        {
+            label: 'Jundiai',
+            backgroundColor: 'rgb(0, 203, 219)',
+            borderColor: 'rgb(2, 0, 127)',
+            data: [36], /*dados inseridos no grafico*/
+            borderWidth: 1
+        },
+        {
+            label: 'Campinas',
+            backgroundColor: 'rgb(150, 203, 0)',
+            borderColor: 'rgb(33, 100, 0)',
+            data: [42], /*dados inseridos no grafico*/
+            borderWidth: 1
+        }
+    ]
+};
+
+        const config3 = {
+            type: 'pie',
+            data: data3,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                    display: true,
+                    text: 'De acordo com os usuarios do site'
+                     }
+                }
+            }
+        };
+
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        );
+        const myChart3 = new Chart(
+            document.getElementById('myChart3'),
+            config3
+        );
+
+    </script>
+</body>
+</html>

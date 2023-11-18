@@ -5,25 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/tela-perfil.css">
+    <script src="./js/validar-sessao.js"></script>
 </head>
-<body>
+
+
+<body onload="validarSessao()"> <!-- onload é quando a pagina for totalmente carregada ela executará... -->
+   
     <div class="header">
         <div class="container">
-            <div class="frase" id="div_bemvindo">Bem-vinda Samarah!</div>
+            <div class="frase" id="div_bemvindo">Bem-vinda <span id="nome_usuario"></span>!</div>
             <div class="imagem-perfil">
-                 <img src="./assets/imagens/minha-foto.png" class="perfil-editado">
+                
+                    <img id="img_mini_imagem" class="perfil-editado">
+                
             </div>
             <div class="navbar">
                 <ul>
-                   <li><a href="#" class="menu-selecionado">Meu Perfil</a></li>        
+                   <li><a href="./perfil.html" class="menu-selecionado">Meu Perfil</a></li>        
                    <li><a href="./dorama.html" class="borda menu-item">Doramas</a></li>        
                    <li><a href="#" class="borda menu-item">Quiz</a></li>        
-                   <li><a href="#" class="borda menu-item">Análise</a></li>        
+                   <li><a href="./dashboard.html" class="borda menu-item">Análise</a></li>        
                    <li><a href="./login.html" class="borda menu-item">Sair</a></li>        
                 </ul>   
             </div>
         </div>
-        <div class="dividindo-tela"></div>
     </div>
     
     <div class="carteira">
@@ -34,20 +39,21 @@
 
             <div class="informacao">
                 <div class="foto">
-                  <img src='./assets/imagens/minha-foto.png' class="meus-dados-foto">
+
+                  <img id="img_imagem" class="meus-dados-foto">
                 </div>
                 <div class="formulario">
                     <div class="nome">
-                     Nome: <div class="dado">Samarah</div>
+                     Nome: <span id="nome_usuario"></span>
                     </div>
                     <div class="genero">
-                        Gênero: <div class="dado">Feminino</div>
+                        Gênero: <span id="genero_usuario"></span>
                     </div>
                     <div class="idade">
-                        Idade: <div class="dado"> 19</div>
+                        Idade: <span id="idade_usuario"></span>
                     </div>
                     <div class="email">
-                        Email: <div class="dado"> sahcosta@gmail.com</div>
+                        Email: <span id="email_usuario"></span>
                     </div>
                 </div>
         </div>

@@ -34,6 +34,7 @@ li{
      background-color: #F8C4B5;
      position: fixed;
      justify-content: center;
+     /* margin-right: 300px; */
 }
 
                                              /* IMAGEM DO HEADER */
@@ -51,8 +52,9 @@ li{
      align-items: center;
 }
 .perfil-editado{
-     width: 40%;
-     border-radius: 110px;
+     width: 50%;
+     height: 90px;
+     border-radius: 80px;
 
 }
 .frase{
@@ -105,15 +107,20 @@ li{
 
 .carteira{
      display: flex ;
-     width: 83%;
+     width: 85%;
      height: 90%;
-     justify-content:flex-end;
+     justify-content: flex-end;
+
+     /* margin-right: -300px; */
      align-items: center;
+     /* background-color: aqua; */
+
 }
 
 .estrutura-carteira{
      display: flex;
-     width: 60%; 
+     /* width: 60%;  */
+     /* position: fixed; */
      height: 70%;
      border-radius: 8px;
      background-color: #F8C4B5;
@@ -124,7 +131,7 @@ li{
 
 .informacao{
      display: flex; 
-     justify-content: center;
+     /* justify-content:flex-; */
      align-items: center;
      height: 80%;
 }
@@ -150,6 +157,7 @@ li{
      width: 50%;
      height: 60%;
      margin-right: 90px;
+     margin-left: 20px;
 }
 
 .meus-dados-foto{
