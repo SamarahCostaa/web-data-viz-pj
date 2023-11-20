@@ -4,26 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="./css/tela-perfil.css"> -->
     <link rel="stylesheet" href="./css/tela-dorama.css">
+    <script src="./js/validar-dorama.js"></script>
 </head>
-<body>
+
+
+<body onload="validarDorama()"> <!-- onload é quando a pagina for totalmente carregada ela executará... -->
+   
     <div class="header">
         <div class="container">
-            <div class="frase" id="div_bemvindo">Bem-vinda Samarah!</div>
+            <div class="frase" id="div_bemvindo">Bem-vinda <span id="nome_usuario"></span>!</div>
             <div class="imagem-perfil">
-                 <img src="./assets/imagens/minha-foto.png" class="perfil-editado">
+                
+                    <img id="img_imagem" class="perfil-editado">
+                
             </div>
             <div class="navbar">
                 <ul>
                    <li><a href="./perfil.html" class="borda menu-item">Meu Perfil</a></li>        
-                   <li><a href="#" class="menu-selecionado">Doramas</a></li>        
+                   <li><a href="./dorama.html" class="menu-selecionado">Doramas</a></li>        
                    <li><a href="#" class="borda menu-item">Quiz</a></li>        
                    <li><a href="./dashboard.html" class="borda menu-item">Análise</a></li>        
                    <li><a href="./login.html" class="borda menu-item">Sair</a></li>        
                 </ul>   
             </div>
         </div>
-    </div>
+    </div> 
 
     <div class="publicacoes">
         
@@ -31,10 +38,11 @@
         <div class="post">
             <div class="borda-img">
                 <img src="https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2022/08/16/1124744466-the-extraordinary-attorney-woo.jpg" class="img-editada">
+                <p class="titulo">Uma advogada Extraordinaria</p>
             </div>
 
             <div class="descricao"> 
-            Uma garota graduada recentemente em direito é reconhecida como a melhor advogada de Seul e, com apoio do pai, garante sua primeira posição em uma empresa de renomada. Contudo, ao se juntar à equipe, enfrenta desafios devido à falta de preparo do ambiente para recebê-la, sobretudo pela incompreensão de alguns colegas quanto à sua condição autista.
+            Uma garota graduada recentemente em direito é reconhecida como a melhor advogada de Seul e, com apoio do pai, garante sua primeira posição em uma empresa renomada. Contudo, ao se juntar à equipe, enfrenta desafios devido à falta de preparo do ambiente para recebê-la, sobretudo pela incompreensão de alguns colegas quanto à sua condição autista.
 
             <div class="caixa-comentar">
                 <div class="linha-1">
@@ -43,7 +51,7 @@
                 </div>  
                 
                 <div class="linha-2">
-                    <div id="div_comentario1" class="exibindo"></div>
+                    <span id="span_nome_comentario"></span><div id="div_comentario1" class="exibindo"></div>
                     <div class="exibir-apagar">
                         <button onclick="exibir()" class="botao-menor">Ver comentarios</button>
                         <br>
@@ -59,6 +67,7 @@
         <div class="post">
             <div class="borda-img">
                 <img src="https://i0.wp.com/www.geekguia.com.br/wp-content/uploads/2022/05/Pretendente-Surpresa-Capa.jpg?fit=2160%2C1258&amp;ssl=1" class="img-editada">
+
             </div>
 
             <div class="descricao">
@@ -82,48 +91,8 @@
         </div>
         </div>
     </div>
+    
+      
+    </div>
 </body>
 </html>
-<script>
-    var lista_comentario1 = [];
-    var lista_comentario2 = [];
-
-    function comentar(){
-        var comentario1 = input_comentario1.value;
-        var comentario2 = input_comentario2.value;
-
-        if(comentario1 != ''){
-        lista_comentario1.push(comentario1);
-        div_comentario1.innerHTML +=  `${comentario1}<br>`
-        } else if(comentario2 != ''){
-            lista_comentario2.push(comentario2);
-            div_comentario2.innerHTML +=  `${comentario2}<br>`
-
-        }
-    }
-
-    function apagar(){
-        div_comentario1.innerHTML =  ``;
-        div_comentario2.innerHTML =  ``;
-    }
-
-    function exibir(){
-        var comentario1 = input_comentario1.value;
-        var comentario2 = input_comentario1.value;
-        
-        if(comentario1){
-        for(var i = 0; i < lista_comentario1.length; i++){
-            lista_comentario1[i];
-            div_comentario1.innerHTML += `${lista_comentario1[i]}<br>`;
-        }
-    }
-        if(comentario2){
-        for(var i = 0; i < lista_comentario2.length; i++){
-            lista_comentario2[i];
-            div_comentario2.innerHTML += `${lista_comentario2[i]}<br>`;
-        }
-    }
-
-    }
-
-</script>

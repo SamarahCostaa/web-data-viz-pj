@@ -49,7 +49,7 @@ function validar(){
         div_email_errado.innerHTML = `O e-mail está inválido!`;
     }
 
-    if(generoVar == 'feminino'.toLocaleLowerCase() || generoVar == 'masculino'.toLocaleLowerCase() || generoVar == 'outro'.toLocaleLowerCase()){
+    if(generoVar.toLocaleLowerCase() == 'feminino' || generoVar.toLocaleLowerCase() == 'masculino' || generoVar.toLocaleLowerCase() == 'outro'){
         div_genero.innerHTML = `O gênero está válido!`;
     }else{
         div_genero_errado.innerHTML = `O genêro está inválido!`;
@@ -101,8 +101,8 @@ function cadastrar(){
     var emailVar = input_email.value;
     var idadeVar = Number(input_idade.value);
     var generoVar = input_genero.value;
-    // var cidadeVar = input_cidade.value;
-    // var estadoVar = input_estado.value;
+    var cidadeVar = input_cidade.value;
+    var estadoVar = input_estado.value;
     var senhaVar = input_senha.value;
     var confirma_senhaVar = input_confirma_senha.value;
     var validado =  (nomeVar.length >= 2) && (emailVar.indexOf('@') >= 0 && emailVar.indexOf('.') >= 0) && (idadeVar.length > 0) && (senhaVar.length >= 8 && confirma_senhaVar == senhaVar);
@@ -121,14 +121,14 @@ function cadastrar(){
         imagemServer: imagemVar,
         idadeServer: idadeVar,
         generoServer: generoVar,
-        // cidadeServer: cidadeVar,
-        // estadoServer: estadoVar,
+        cidadeServer: cidadeVar,
+        estadoServer: estadoVar,
         senhaServer: senhaVar,
         // enderecoServer: enderecoVar
 
       }),
     })
-    if(validado == true){
+    if(validado == false){
         window.open('login.html', '_self');
     }
 }

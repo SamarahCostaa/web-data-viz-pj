@@ -6,30 +6,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/tela-dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/validar-dash.js"></script>
     <!-- <script src="./js/dashboard.js"></script> -->
     
 </head>
-<body>
+<body onload="validarDash()">
     <div class="header">
         <div class="container">
-
-            <div class="frase" id="div_bemvindo">Bem-vinda Samarah!</div>
+            <div class="frase" id="div_bemvindo">Bem-vinda <span id="nome_usuario"></span>!</div>
             <div class="imagem-perfil">
-                 <img src="./assets/imagens/minha-foto.png" class="perfil-editado">
+                
+                    <img id="img_imagem" class="perfil-editado">
+                
             </div>
-
             <div class="navbar">
                 <ul>
-                 <li><a href="./perfil.html" class="borda menu-item">Meu Perfil</a></li>        
-                 <li><a href="./dorama.html" class="borda menu-item">Doramas</a></li>        
-                 <li><a href="#" class="borda menu-item">Quiz</a></li>        
-                 <li><a href="#" class="menu-selecionado">Dashboard</a></li>        
-                 <li><a href="./login.html" class="borda menu-item">Sair</a></li>        
+                   <li><a href="./perfil.html" class="borda menu-item">Meu Perfil</a></li>        
+                   <li><a href="./dorama.html" class="borda menu-item">Doramas</a></li>        
+                   <li><a href="#" class="borda menu-item">Quiz</a></li>        
+                   <li><a href="./dashboard.html" class="menu-selecionado">Análise</a></li>        
+                   <li><a href="./login.html" class="borda menu-item">Sair</a></li>        
                 </ul>   
-            </div> <!-- FINAL DA NAVBAR -->
-
-        </div> <!-- FINAL DO CONTAINER -->
-    </div> <!-- FINAL DO HEADER -->
+            </div>
+        </div>
+    </div> 
 
     <div class="corpo">
         <div class="grafico-1 ">

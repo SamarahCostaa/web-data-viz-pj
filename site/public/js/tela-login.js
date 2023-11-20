@@ -20,10 +20,9 @@
         if (resposta.status == 200) {
       
             resposta.json().then(json => {
-
                 // console.log(json[0].nome); //está pegando o nome do primeiro item do vetor
                 console.log(JSON.stringify(json));
-                sessionStorage.ID_USUARIO = json[0].id;
+                sessionStorage.ID_USUARIO = json[0].id_usuario;
                 sessionStorage.IMAGEM_USUARIO = json[0].url_imagem;
                 sessionStorage.NOME_USUARIO = json[0].nome;
                 sessionStorage.EMAIL_USUARIO = json[0].email;
@@ -36,6 +35,8 @@
         } else {
       
             console.log("Houve um erro ao tentar realizar o login!");
+            div_senha_errado.innerHTML = `Senha ou email invalidos!`
+
             resposta.text().then(texto => {
                 console.error(texto);
             });
@@ -53,7 +54,7 @@
 }
 
 
-
+var idUser = sessionStorage.ID_USUARIO
 
 
 

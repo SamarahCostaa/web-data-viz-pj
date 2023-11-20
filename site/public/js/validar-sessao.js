@@ -8,6 +8,9 @@ function validarSessao(){
     var imagem_usuario = document.getElementById("img_imagem");
     var mini_imagem_usuario = document.getElementById("img_mini_imagem");
     var nome_usuario = document.getElementById("nome_usuario");
+    var carteira_nome_usuario = document.getElementById("nome_usuario_carteira");
+    var nome_dorama_usuario = document.getElementById("dorama_nome_usuario");
+    // var nome_usuario_header = document.getElementById("nome_usuario_header");
     var genero_usuario = document.getElementById("genero_usuario");
     var idade_usuario = document.getElementById("idade_usuario");
     var email_usuario = document.getElementById("email_usuario");
@@ -17,12 +20,15 @@ function validarSessao(){
     if(imagem_usuario && urlDaImagem){
         imagem_usuario.src = urlDaImagem;
         mini_imagem_usuario.src = sessionStorage.IMAGEM_USUARIO;
-
     }
     
     if (email !== undefined  && nome !== undefined) { /*se existir a imagem e a url*/
         imagem_usuario.innerHTML = imagem;
         nome_usuario.innerHTML = nome;
+        carteira_nome_usuario.innerHTML = nome;
+        // nome_dorama_usuario.innerHTML = nome;
+        // img_mini_imagem.innerHTML = nome;
+        // nome_usuario_header.innerHTML = nome;
         genero_usuario.innerHTML = genero;
         idade_usuario.innerHTML = idade;
         email_usuario.innerHTML = email;
