@@ -54,13 +54,6 @@
 }
 
 
-var idUser = sessionStorage.ID_USUARIO
-
-
-
-
-
-
 
 
 

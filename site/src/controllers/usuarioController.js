@@ -13,7 +13,6 @@ function autenticar(req, res) {
 
         usuarioModel.autenticar(email, senha)
             .then(
-                
                 function (resposta) {
                      if (resposta.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
@@ -45,6 +44,7 @@ function cadastrar(req, res) {
     var senhaVar = req.body.senhaServer;
     var cidadeVar = req.body.estadoServer;
     var estadoVar = req.body.cidadeServer;
+    // var fk_endereco = req.body.fk_endereco
 
     // Faça as validações dos valores
     if (imagemVar == undefined){
@@ -63,66 +63,57 @@ function cadastrar(req, res) {
         res.status(400).send("Sua cidade está undefined!");
     } else if (estadoVar == undefined) {
         res.status(400).send("Seu estado está undefined!");
-    } 
-         else {
+    }
+     
+    else {
 
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(imagemVar, nomeVar, emailVar, idadeVar, generoVar, senhaVar, cidadeVar, estadoVar)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
+     usuarioModel.cadastrar(imagemVar, nomeVar, emailVar, idadeVar, generoVar, senhaVar, cidadeVar, estadoVar) // isso
+        .then(
+         function (resultado) {
+         res.json(resultado);
+        }
+        ).catch(
+         function (erro) {
+         console.log(erro);
+         console.log(
+         "\nHouve um erro ao realizar o cadastro! Erro: ",
+         erro.sqlMessage
+         );
+         res.status(500).json(erro.sqlMessage);
+         }
+         );
     }
 }
 
 function comentar(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-
     var usuario_receber = require("../routes/usuarios");
     var comentario_post1 = req.body.comentario_post1Server;
     var comentario_post2 = req.body.comentario_post2Server;
-    // var idUser = req.body.idUserServer;
-    // var idUser = sessionStorage.ID_USUARIO;
-// var idUser = sessionStorage.ID_USUARIO;
+    var fk_usuario = req.params.fk_usuario;
+    var fk_post = req.body.fk_postServer;
 
 
     // Faça as validações dos valores
     if (comentario_post1 == undefined){
         res.status(400).send("Seu comentario está undefined!");
-    } else if (comentario_post2 == undefined) {
-        res.status(400).send("Seu comentario está undefined!");
+    // } else if (comentario_post2 == undefined) {
+    //     res.status(400).send("Seu comentario está undefined!");
+    // }
+    } else if (fk_usuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (fk_post == undefined) {
+        res.status(400).send("Seu id está undefined!");
     } 
     else {
-        // if (res.status == 200) {
-      
-        //     res.json().then(json => {
-
-        //         // console.log(json[0].nome); //está pegando o nome do primeiro item do vetor
-        //         console.log(JSON.stringify(json));
-        //         sessionStorage.ID_USUARIO = json[0].id_usuario;
-        //         // apenas para exibir o loading
-        //     });
-      
-        // }
-
-
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.comentar(comentario_post1, comentario_post2/*, idUser*/)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
+    
+        usuarioModel.comentar(fk_usuario, fk_post, comentario_post1)
+          .then(
+              function (resultado) {
+                  res.json(resultado);
+       
+              }
+          )
+            .catch(
                 function (erro) {
                     console.log(erro);
                     console.log(
@@ -136,28 +127,54 @@ function comentar(req, res) {
 
 }
 
-// function comentar(req, res) {
-//     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+
+
+function exibir_post1(req, res){
+    usuarioModel.exibir_post1().then((resultado) => {
+        res.status(200).json(resultado);
+      });
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 //     var usuario_receber = require("../routes/usuarios");
-//     var comentario_post1 = req.body.comentario_post1Server;
-//     var comentario_post2 = req.body.comentario_post2Server;
+//     var comentario_post1 = req.query.comentario_post1;
+//     // var comentario_post2 = req.body.comentario_post2Server;
+//     // var fk_usuario = req.params.fk_usuario;
+//     // var fk_post = req.body.fk_postServer;
+
+
 //     // Faça as validações dos valores
 //     if (comentario_post1 == undefined){
 //         res.status(400).send("Seu comentario está undefined!");
-//     } else if (comentario_post2 == undefined) {
-//         res.status(400).send("Seu comentario está undefined!");
+//     // } else if (comentario_post2 == undefined) {
+//     //     res.status(400).send("Seu comentario está undefined!");
+//     // }
+//     } else if (fk_usuario == undefined) {
+//         res.status(400).send("Seu id está undefined!");
+//     } else if (fk_post == undefined) {
+//         res.status(400).send("Seu id está undefined!");
 //     } 
-    
 //     else {
-
-//         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-//         usuarioModel.cadastrar(comentario_post1, comentario_post2)
-//             .then(
-//                 function (resultado) {
-//                     res.json(resultado);
-//                 }
-//             ).catch(
+    
+//         usuarioModel.comentar(fk_usuario, fk_post, comentario_post1)
+//           .then(
+//               function (resultado) {
+//                   res.json(resultado);
+       
+//               }
+//           )
+//             .catch(
 //                 function (erro) {
 //                     console.log(erro);
 //                     console.log(
@@ -173,5 +190,6 @@ function comentar(req, res) {
 module.exports = {
     autenticar,
     cadastrar,
-    comentar
+    comentar, 
+    exibir_post1
 }

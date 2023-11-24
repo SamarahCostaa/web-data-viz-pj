@@ -123,7 +123,8 @@ function cadastrar(){
         generoServer: generoVar,
         cidadeServer: cidadeVar,
         estadoServer: estadoVar,
-        senhaServer: senhaVar,
+        senhaServer: senhaVar
+        // fk_endereco: fk_endereco,
         // enderecoServer: enderecoVar
 
       }),

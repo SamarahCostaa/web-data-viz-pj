@@ -24,7 +24,7 @@
                 <ul>
                    <li><a href="./perfil.html" class="borda menu-item">Meu Perfil</a></li>        
                    <li><a href="./dorama.html" class="menu-selecionado">Doramas</a></li>        
-                   <li><a href="#" class="borda menu-item">Quiz</a></li>        
+                   <li><a href="./enquetes.html" class="borda menu-item">Enquetes</a></li>        
                    <li><a href="./dashboard.html" class="borda menu-item">Análise</a></li>        
                    <li><a href="./login.html" class="borda menu-item">Sair</a></li>        
                 </ul>   
@@ -47,13 +47,13 @@
             <div class="caixa-comentar">
                 <div class="linha-1">
                  <input type="text" id="input_comentario1" placeholder="Escreva seu comentario" class="caixa">
-                 <button onclick="comentar()" class="botao">Comentar</button>
+                 <button onclick="comentar(1)" class="botao">Comentar</button>
                 </div>  
                 
                 <div class="linha-2">
                     <span id="span_nome_comentario"></span><div id="div_comentario1" class="exibindo"></div>
                     <div class="exibir-apagar">
-                        <button onclick="exibir()" class="botao-menor">Ver comentarios</button>
+                        <button onclick="exibir_post1()" class="botao-menor">Ver comentarios</button>
                         <br>
                         <button onclick="apagar()" class="botao-menor">Ver menos</button>
                     </div>
@@ -61,6 +61,9 @@
             </div>
         </div>
         </div>
+
+
+        
 
 
         <!-- SEGUNDA PUBLICAÇÃO -->

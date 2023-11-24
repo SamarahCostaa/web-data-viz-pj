@@ -1,12 +1,15 @@
 var database = require("../database/config")
 
+
 //LOGIN
-// var idUser;
+
 function autenticar(emailVar, senhaVar) {
+
     var instrucao = `
         SELECT id_usuario, url_imagem, nome, email, idade, genero, senha FROM usuario WHERE email = '${emailVar}' AND senha = '${senhaVar}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
+
     return database.executar(instrucao);
 }
 
@@ -25,31 +28,32 @@ function cadastrar(imagemVar, nomeVar, emailVar, idadeVar, generoVar, senhaVar) 
 
 
 
-function comentar(comentario_post1, emailVar, senhaVar/*, idUser*/) {
+function comentar(fk_usuario, fk_post, comentario_post1) {
+    // idUser = sessionStorage.ID_USUARIO;
+
     console.log("Executando a função comentar no Model...");
 
-    // Faça as validações necessárias antes de executar o SQL
-    if (comentario_post1 == undefined /* || idUser == null*/) {
-        return Promise.reject("Campos inválidos!");
-    }
-
-    var pegando_id = `
-        SELECT id_usuario FROM usuario WHERE email = '${emailVar}' AND senha = '${senhaVar}';
-    `;
-
     var instrucao = `
-        INSERT INTO comentario (descricao, fk_post, fk_usuario) VALUES ('${comentario_post1}', 1, '${pegando_id}');
+        INSERT INTO comentario (fk_usuario, fk_post, descricao) VALUES (${fk_usuario}, ${fk_post}, '${comentario_post1}');
     `;
+
 
     console.log("Executando a instrução SQL: \n" + instrucao);
 
-    // Retorna a promessa para o Controller lidar com o resultado ou erro
     return database.executar(instrucao);
-    // return database.executar(instrucao);
+}
+
+
+/*SELECTS NA TABELA COMENTARIO*/
+function exibir_post1(){
+     var query = `SELECT usuario.nome, comentario.descricao FROM usuario JOIN comentario ON id_usuario = fk_usuario WHERE fk_post = 1;`;
+
+     return database.executar(query);
 }
 
 module.exports = {
     autenticar,
     cadastrar,
-    comentar
+    comentar, 
+    exibir_post1
 };

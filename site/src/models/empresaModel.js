@@ -5,6 +5,14 @@ function buscarPorId(id) {
 
   return database.executar(query);
 }
+
+// function buscarPorIdUser(emailVar senha) {
+//   var query = `select id_usuario from usuario WHERE email = '${emailVar}' AND senha = '${senhaVar}';`;
+
+//   return database.executar(query);
+// }
+
+
 function buscarPorCnpj(cnpj) {
   var query = `select * from empresa where cnpj = '${cnpj}'`;
 
