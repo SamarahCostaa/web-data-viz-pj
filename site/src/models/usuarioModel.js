@@ -1,10 +1,9 @@
 var database = require("../database/config")
 
 
-//LOGIN
-
+//LOGIN!
 function autenticar(emailVar, senhaVar) {
-
+    /*COMANDO NO BANCO DE DADOS*/
     var instrucao = `
         SELECT id_usuario, url_imagem, nome, email, idade, genero, senha FROM usuario WHERE email = '${emailVar}' AND senha = '${senhaVar}';
     `;
@@ -27,8 +26,8 @@ function cadastrar(imagemVar, nomeVar, emailVar, idadeVar, generoVar, senhaVar) 
 }
 
 
-
-function comentar(fk_usuario, fk_post, comentario_post1) {
+//COMENTAR!
+function comentar(fk_usuario, fk_post, comentario_post1, comentario_post2) {
     // idUser = sessionStorage.ID_USUARIO;
 
     console.log("Executando a função comentar no Model...");
@@ -37,6 +36,9 @@ function comentar(fk_usuario, fk_post, comentario_post1) {
         INSERT INTO comentario (fk_usuario, fk_post, descricao) VALUES (${fk_usuario}, ${fk_post}, '${comentario_post1}');
     `;
 
+    var instrucao = `
+        INSERT INTO comentario (fk_usuario, fk_post, descricao) VALUES (${fk_usuario}, ${fk_post}, '${comentario_post2}');
+    `;
 
     console.log("Executando a instrução SQL: \n" + instrucao);
 
@@ -46,7 +48,13 @@ function comentar(fk_usuario, fk_post, comentario_post1) {
 
 /*SELECTS NA TABELA COMENTARIO*/
 function exibir_post1(){
-     var query = `SELECT usuario.nome, comentario.descricao FROM usuario JOIN comentario ON id_usuario = fk_usuario WHERE fk_post = 1;`;
+     var query = `SELECT usuario.nome, comentario.descricao FROM usuario JOIN comentario ON id_usuario = fk_usuario WHERE fk_post = 1 ORDER BY dt_hora DESC;`;
+
+     return database.executar(query);
+}
+
+function exibir_post2(){
+     var query = `SELECT usuario.nome, comentario.descricao FROM usuario JOIN comentario ON id_usuario = fk_usuario WHERE fk_post = 2 ORDER BY dt_hora DESC;`;
 
      return database.executar(query);
 }
@@ -55,5 +63,6 @@ module.exports = {
     autenticar,
     cadastrar,
     comentar, 
-    exibir_post1
+    exibir_post1,
+    exibir_post2
 };

@@ -21,13 +21,12 @@
                     <li><a href="#">Cadastre-se</a></li>
                     <li><a href="./login.html">Login</a></li>
                 </ul>
-            </div>
-        </div>
-    </div>
+            </div> <!-- FINAL DA NAVBAR -->
+        </div> <!-- FINAL DO CONTAINNER -->
+    </div> <!-- FINAL DO HEADER -->
 
-
-    <div class="quadrado">
-        <div class="quadrado-escuro">
+    <div class="quadrado"> <!-- CONTEUDO DA PÁGINA -->
+        <div class="quadrado-escuro"> <!-- QUADRADO 'SEM INTERAÇÃO, APENAS A IMAGEM E FRASES' -->
             <div class="bem-vindo">
 
                 <div class="mensagem">
@@ -42,15 +41,16 @@
                 
                 <ul><li><a class="botao" href="./login.html">Login</a></li></ul>
             </div>
-        </div>
+        </div> <!-- FINAL DO QUADRADO ESTÁTICO -->
 
-        <div class="quadrado-claro">
+        <div class="quadrado-claro"> <!-- QUADRADO COM OS CAMPOS PARA O USUARIO PREENCHER -->
             <div class="espaco-titulo">
                 <div class="titulo-bem-vindo">
                     <p>Preencha as informações</p>
                 </div>
             </div>
 
+            <!-- INPUTS -->
             <div class="imagem">
                 <p>Link da sua foto:</p><input type="text" id="input_imagem" class="caixa" onkeyup="validar()">
            </div>
@@ -77,26 +77,15 @@
                      </div>
                      <div class="idade-certo" id="div_idade"></div>
                      <div class="idade-errado" id="div_idade_errado"></div>
-    
-                     <div class="genero">
-                         <p>Gênero:</p><input type="text" id="input_genero" class="caixa" onkeyup="validar()">
-                     </div>
-                     <div class="genero-certo" id="div_genero"></div>
-                     <div class="genero-errado" id="div_genero_errado"></div>
                     </div>
- 
+                    
+                    
                     <div class="bloco-2">
-                     <div class="cidade">
-                         <p>Cidade:</p><input type="text" id="input_cidade" class="caixa" onkeyup="validar()">
-                     </div>
-                     <div class="cidade-certo" id="div_cidade"></div>
-                     <div class="cidade-errado" id="div_cidade_errado"></div>
-         
-                     <div class="estado">
-                         <p>Estado:</p><input type="text" id="input_estado" class="caixa" onkeyup="validar()">
-                     </div>
-                     <div class="estado-certo" id="div_estado"></div>
-                     <div class="estado-errado" id="div_estado_errado"></div>
+                         <div class="genero">
+                             <p>Gênero:</p><input type="text" id="input_genero" class="caixa" onkeyup="validar()">
+                         </div>
+                         <div class="genero-certo" id="div_genero"></div>
+                         <div class="genero-errado" id="div_genero_errado"></div>
          
                      <div class="senha">
                          <p>Senha:</p><input type="password" id="input_senha" class="caixa" onkeyup="validar()">
@@ -111,10 +100,10 @@
                      <div class="confirma-errado" id="div_confirma_errado"></div>
                    </div>
                 </div>
-
-        <div class="frase-cadastrar">
+                
+        <!-- <div class="frase-cadastrar">
              Já possue cadastro?<li><a href="./login.html">Login</a></li>
-        </div>
+        </div> -->
 
         <button onclick="cadastrar()" class="botao-cadastrar">Cadastre-se</button>
     </div>

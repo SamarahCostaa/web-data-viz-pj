@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="./css/tela-perfil.css"> -->
     <link rel="stylesheet" href="./css/tela-dorama.css">
     <script src="./js/validar-dorama.js"></script>
 </head>
 
 
-<body onload="validarDorama()"> <!-- onload é quando a pagina for totalmente carregada ela executará... -->
+<body onload="validarDorama()"> <!-- ONLOAD SIGNIFICA 'QUANDO CARREGAR' -->
    
     <div class="header">
         <div class="container">
@@ -30,72 +29,76 @@
                 </ul>   
             </div>
         </div>
-    </div> 
+    </div> <!-- FINAL DO HEADER -->
 
-    <div class="publicacoes">
+
+    <div class="publicacoes"> <!-- TODAS AS PUBLICAÇÕES -->
         
         <!-- PRIMEIRA PUBLICAÇÃO -->
         <div class="post">
-            <div class="borda-img">
-                <img src="https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2022/08/16/1124744466-the-extraordinary-attorney-woo.jpg" class="img-editada">
-                <p class="titulo">Uma advogada Extraordinaria</p>
-            </div>
-
-            <div class="descricao"> 
-            Uma garota graduada recentemente em direito é reconhecida como a melhor advogada de Seul e, com apoio do pai, garante sua primeira posição em uma empresa renomada. Contudo, ao se juntar à equipe, enfrenta desafios devido à falta de preparo do ambiente para recebê-la, sobretudo pela incompreensão de alguns colegas quanto à sua condição autista.
-
-            <div class="caixa-comentar">
-                <div class="linha-1">
-                 <input type="text" id="input_comentario1" placeholder="Escreva seu comentario" class="caixa">
-                 <button onclick="comentar(1)" class="botao">Comentar</button>
-                </div>  
-                
-                <div class="linha-2">
-                    <span id="span_nome_comentario"></span><div id="div_comentario1" class="exibindo"></div>
-                    <div class="exibir-apagar">
-                        <button onclick="exibir_post1()" class="botao-menor">Ver comentarios</button>
-                        <br>
-                        <button onclick="apagar()" class="botao-menor">Ver menos</button>
-                    </div>
-                </div>
-            </div>
+             <div class="borda-img"> <!-- IMAGEM -->
+                 <img src="https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2022/08/16/1124744466-the-extraordinary-attorney-woo.jpg" class="img-editada">
+                 <p class="titulo">Uma advogada Extraordinaria</p>
+             </div>
+    
+             <!-- SINOPSE -->
+             <div class="descricao"> 
+                 Uma garota graduada recentemente em direito é reconhecida como a melhor advogada de Seul e, com apoio do pai, garante sua primeira posição em uma empresa renomada. Contudo, ao se juntar à equipe, enfrenta desafios devido à falta de preparo do ambiente para recebê-la, sobretudo pela incompreensão de alguns colegas quanto à sua condição autista.
+    
+                 <!-- INPUT COMENTARIO -->
+                 <div class="caixa-comentar">
+                      <div class="linha-1">
+                         <input type="text" id="input_comentario1" placeholder="Escreva seu comentario" class="caixa">
+                         
+                         <!-- AQUI ESTOU DIZENDO QUE A FUNÇÃO SÓ FUNCIONARÁ COM O ID 1 DO idPost -->
+                         <button onclick="comentar(1)" class="botao">Comentar</button>
+                      </div>  
+                    
+                        <!-- EXIBIÇÃO DOS COMENTÁRIO -->
+                          <div class="linha-2">
+                             <span id="span_nome_comentario"></span><div id="div_comentario1" class="exibindo"></div>
+                               <div class="exibir-apagar">
+                                 <button onclick="exibir_post1()" class="botao-menor">Ver comentarios</button>
+                                 <br>
+                                 <button onclick="apagar()" class="botao-menor">Ver menos</button>
+                              </div>
+                          </div>
+                 </div>
+             </div>
         </div>
-        </div>
-
-
         
 
 
         <!-- SEGUNDA PUBLICAÇÃO -->
         <div class="post">
             <div class="borda-img">
-                <img src="https://i0.wp.com/www.geekguia.com.br/wp-content/uploads/2022/05/Pretendente-Surpresa-Capa.jpg?fit=2160%2C1258&amp;ssl=1" class="img-editada">
-
+             <img src="https://i0.wp.com/www.geekguia.com.br/wp-content/uploads/2022/05/Pretendente-Surpresa-Capa.jpg?fit=2160%2C1258&amp;ssl=1" class="img-editada">
             </div>
 
+            <!-- SINOPSE -->
             <div class="descricao">
-                Shin Ha-ri desenvolve uma paixão por um colega de trabalho, mas fica desanimada ao descobrir que ele já tem uma namorada. Para desabafar, Ha-ri concorda em se passar por sua amiga rica, Jin Young-seo, em um encontro às cegas que ela não quer participar. No entanto, o encontro é com Kang Tae-mu, CEO da empresa onde Ha-ri trabalha, e ele está participando por pressão familiar. Tae-mu, um jovem focado no trabalho, decide casar-se rapidamente para não prejudicar seus objetivos profissionais, surpreendendo Ha-ri.
+             Shin Ha-ri desenvolve uma paixão por um colega de trabalho, mas fica desanimada ao descobrir que ele já tem uma namorada. Para desabafar, Ha-ri concorda em se passar por sua amiga rica, Jin Young-seo, em um encontro às cegas que ela não quer participar. No entanto, o encontro é com Kang Tae-mu, CEO da empresa onde Ha-ri trabalha, e ele está participando por pressão familiar. Tae-mu, um jovem focado no trabalho, decide casar-se rapidamente para não prejudicar seus objetivos profissionais, surpreendendo Ha-ri.
 
-            <div class="caixa-comentar">
-                <div class="linha-1">
-                 <input type="text" id="input_comentario2" placeholder="Escreva seu comentario" class="caixa">
-                 <button onclick="comentar()" class="botao">Comentar</button>
-                </div>  
+              <!-- INPUT COMENTARIO -->
+              <div class="caixa-comentar">
+                   <div class="linha-1">
+                     <input type="text" id="input_comentario2" placeholder="Escreva seu comentario" class="caixa">
+                     <button onclick="comentar(2)" class="botao">Comentar</button>
+                  </div>  
                 
-                <div class="linha-2">
-                    <div id="div_comentario2" class="exibindo"></div>
-                    <div class="exibir-apagar">
-                        <button onclick="exibir()" class="botao-menor">Ver comentarios</button>
-                        <br>
-                        <button onclick="apagar()" class="botao-menor">Ver menos</button>
-                    </div>
-                </div>
-            </div>
+                  <!-- EXIBIÇÃO DOS COMENTÁRIO -->
+                  <div class="linha-2">
+                         <div id="div_comentario2" class="exibindo"></div>
+                      <div class="exibir-apagar">
+                         <button onclick="exibir_post2()" class="botao-menor">Ver comentarios</button>
+                         <br>
+                         <button onclick="apagar()" class="botao-menor">Ver menos</button>
+                      </div>
+                 </div>
+              </div>
+          </div>
         </div>
-        </div>
-    </div>
-    
-      
-    </div>
+
+    </div> <!-- FINAL DAS PUBLICAÇÕES -->
 </body>
 </html>

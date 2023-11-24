@@ -1,16 +1,12 @@
 function validar(){
-
+/*Estou pegando os valores das inputs que o usuario inseriu*/
    var imagemVar = input_imagem.value;
    var nomeVar = input_nome.value;
    var emailVar = input_email.value;
    var idadeVar = input_idade.value;
    var generoVar = input_genero.value;
-   var cidadeVar = input_cidade.value;
-   var estadoVar = input_estado.value;
    var senhaVar = input_senha.value;
    var confirma_senhaVar = input_confirma_senha.value;
-
-//    var validado = (nomeVar.length >= 2) && (emailVar.indexOf('@') >= 0 && emailVar.indexOf('.') >= 0) && (cidadeVar.length > 0) && (estadoVar.length > 0) && (idadeVar.length > 0) && (senhaVar.length >= 8 && confirma_senhaVar == senhaVar);
 
     div_nome.innerHTML = ``;
     div_nome_errado.innerHTML = ``;
@@ -24,18 +20,13 @@ function validar(){
     div_genero.innerHTML = ``;
     div_genero_errado.innerHTML = ``;
     
-    div_cidade.innerHTML = ``;
-    div_cidade_errado.innerHTML = ``;
-    
-    div_estado.innerHTML = ``;
-    div_estado_errado.innerHTML = ``;
-    
     div_senha.innerHTML = ``;
     div_senha_errado.innerHTML = ``;
     
     div_confirma.innerHTML = ``;
     div_confirma_errado.innerHTML = ``;
     
+    /*Validações com if e else*/
     
     if(nomeVar.length >= 2){
         div_nome.innerHTML = `O nome está válido!`;
@@ -53,18 +44,6 @@ function validar(){
         div_genero.innerHTML = `O gênero está válido!`;
     }else{
         div_genero_errado.innerHTML = `O genêro está inválido!`;
-    }
-    
-    if(cidadeVar.length > 0){
-        div_cidade.innerHTML = `A cidade está válido!`;
-    }else{
-        div_cidade_errado.innerHTML = `O campo deve ser preenchido!`;
-    }
-    
-    if(estadoVar.length > 0){
-        div_estado.innerHTML = `O estado está válido!`;
-    }else{
-        div_estado_errado.innerHTML = `O campo deve ser preenchido!`;
     }
     
     if(idadeVar.length > 0){
@@ -95,42 +74,36 @@ function validar(){
 }
 
 function cadastrar(){
-    
+    /*Recebendo as informações de novo */
+
     var imagemVar = input_imagem.value;
     var nomeVar = input_nome.value;
     var emailVar = input_email.value;
     var idadeVar = Number(input_idade.value);
     var generoVar = input_genero.value;
-    var cidadeVar = input_cidade.value;
-    var estadoVar = input_estado.value;
     var senhaVar = input_senha.value;
     var confirma_senhaVar = input_confirma_senha.value;
     var validado =  (nomeVar.length >= 2) && (emailVar.indexOf('@') >= 0 && emailVar.indexOf('.') >= 0) && (idadeVar.length > 0) && (senhaVar.length >= 8 && confirma_senhaVar == senhaVar);
     validar();
     
-  fetch("/usuarios/cadastrar", {
-      method: "POST",
+  fetch("/usuarios/cadastrar", { /*O caminho para enviar os dados é:*/
+      method: "POST", /*post significar mandar, empurrar, enviar*/
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
+        /*estou pegandos os objetos, transformando em JSON, e enviando para o servidor*/
         nomeServer: nomeVar,
         emailServer: emailVar,
         imagemServer: imagemVar,
         idadeServer: idadeVar,
         generoServer: generoVar,
-        cidadeServer: cidadeVar,
-        estadoServer: estadoVar,
         senhaServer: senhaVar
-        // fk_endereco: fk_endereco,
-        // enderecoServer: enderecoVar
 
       }),
     })
-    if(validado == false){
+    validado = true;
+    if(validado == true){
         window.open('login.html', '_self');
     }
 }
-

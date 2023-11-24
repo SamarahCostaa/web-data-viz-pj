@@ -1,4 +1,5 @@
 function validarDash(){
+    /*Aqui só estou pegando as informações do cadastro para exibir a imagem do usuario no header*/
     var imagem = sessionStorage.IMAGEM_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
     var email = sessionStorage.EMAIL_USUARIO;
@@ -9,15 +10,18 @@ function validarDash(){
     
     var urlDaImagem = imagem;
 
-    if(imagem_usuario && urlDaImagem){
-        imagem_usuario.src = urlDaImagem;
+    if(imagem_usuario && urlDaImagem){ /*se existir a imagem e a url*/
+         imagem_usuario.src = urlDaImagem;
+    }else{
+         imagem_usuario.src = './perfil.png'
     }
     
-    if (email !== undefined  && nome !== undefined) { /*se existir a imagem e a url*/
-        imagem_usuario.innerHTML = imagem;
-        nome_usuario.innerHTML = nome;
-        email_usuario.innerHTML = email;
-    } else {
-        window.location = "./login.html";
+    if (email !== undefined  && nome !== undefined) { 
+         imagem_usuario.innerHTML = imagem;
+         nome_usuario.innerHTML = nome;
+         email_usuario.innerHTML = email;
+    } 
+    else {
+         window.location = "./login.html"; 
     }
 }

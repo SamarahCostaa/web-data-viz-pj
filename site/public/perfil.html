@@ -9,56 +9,59 @@
 </head>
 
 
-<body onload="validarSessao()"> <!-- onload é quando a pagina for totalmente carregada ela executará... -->
+<body onload="validarSessao()"> <!--  ONLOAD SIGNIFICA 'QUANDO CARREGAR' -->
    
     <div class="header">
         <div class="container">
-            <div class="frase" id="div_bemvindo">Bem-vinda <span id="nome_usuario"></span>!</div>
-            <div class="imagem-perfil">
-                
-                    <img id="img_mini_imagem" class="perfil-editado">
-                
+          <div class="frase" id="div_bemvindo">Bem-vinda <span id="nome_usuario"></span>!</div>
+            <div class="imagem-perfil">           
+             <img id="img_mini_imagem" class="perfil-editado">
             </div>
+
             <div class="navbar">
-                <ul>
-                   <li><a href="./perfil.html" class="menu-selecionado">Meu Perfil</a></li>        
-                   <li><a href="./dorama.html" class="borda menu-item">Doramas</a></li>        
-                   <li><a href="./enquetes.html" class="borda menu-item">Enquete</a></li>        
-                   <li><a href="./dashboard.html" class="borda menu-item">Análise</a></li>        
-                   <li><a href="./login.html" class="borda menu-item">Sair</a></li>        
-                </ul>   
+             <ul>
+             <li><a href="./perfil.html" class="menu-selecionado">Meu Perfil</a></li>        
+             <li><a href="./dorama.html" class="borda menu-item">Doramas</a></li>        
+             <li><a href="./enquetes.html" class="borda menu-item">Enquete</a></li>        
+             <li><a href="./dashboard.html" class="borda menu-item">Análise</a></li>        
+             <li><a href="./login.html" class="borda menu-item">Sair</a></li>        
+              </ul>   
             </div>
-        </div>
-    </div>
+      </div>
+   </div> <!-- FINAL DO HEADER -->
     
-    <div class="carteira">
-        <div class="estrutura-carteira">
-            <div class="topo">
+   <!-- CARTEIRA -->
+    <div class="carteira"> <!-- ESPAÇO DA CARTEIRA NA TELA -->
+        <div class="estrutura-carteira"> <!-- CARTEIRA -->
+            <div class="topo"> <!-- MINI HEADER DA CARTEIRA -->
              Minha Carteirinha
             </div>
 
-            <div class="informacao">
-                <div class="foto">
-
-                  <img id="img_imagem" class="meus-dados-foto">
-                </div>
-                <div class="formulario">
-                    <div class="nome">
+            <div class="informacao"> <!-- DADOS EXIBIDOS DENTRO DA CARTEIRA -->
+              <div class="foto">
+                 <img id="img_imagem" class="meus-dados-foto">
+              </div>
+   
+              <div class="formulario">
+                 <div class="nome">
                      Nome: <span id="nome_usuario_carteira"></span>
-                    </div>
-                    <div class="genero">
-                        Gênero: <span id="genero_usuario"></span>
-                    </div>
-                    <div class="idade">
-                        Idade: <span id="idade_usuario"></span>
-                    </div>
-                    <div class="email">
-                        Email: <span id="email_usuario"></span>
-                    </div>
-                </div>
-        </div>
-        <p>Eu faço parte do clube Adoro Dorama!</p>
-        </div>        
-    </div>
+                 </div>
+
+                 <div class="genero">
+                     Gênero: <span id="genero_usuario"></span>
+                 </div>
+
+                 <div class="idade">
+                     Idade: <span id="idade_usuario"></span>
+                 </div>
+
+                 <div class="email">
+                     Email: <span id="email_usuario"></span>
+                 </div>
+             </div>
+          </div> <!-- FINAL DA ÁREA DO DADOS EXIBIDOS-->
+         <p>Eu faço parte do clube Adoro Dorama!</p> <!-- NO FINAL DA CARTEIRA -->
+        </div> <!-- FINAL DA CARTEIRA-->    
+  </div> <!-- FINAL DO ESPAÇO DA CARTEIRA NA TELA -->
 </body>
 </html>
