@@ -79,10 +79,10 @@ function cadastrar(req, res) {
     }
 }
 
-function comentar(req, res) {
+function comentar_1(req, res) {
     var usuario_receber = require("../routes/usuarios");
     var comentario_post1 = req.body.comentario_post1Server;
-    var comentario_post2 = req.body.comentario_post2Server;
+    // var comentario_post2 = req.body.comentario_post2Server;
     var fk_usuario = req.params.fk_usuario;
     var fk_post = req.body.fk_postServer;
 
@@ -90,8 +90,44 @@ function comentar(req, res) {
     // Faça as validações dos valores
     if (comentario_post1 == undefined){
         res.status(400).send("Seu comentario está undefined!");
-    // } else if (comentario_post2 == undefined) {
-    //     res.status(400).send("Seu comentario está undefined!");
+    } else if (fk_usuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (fk_post == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } 
+    else {
+    
+        usuarioModel.comentar_1(fk_usuario, fk_post, comentario_post1)
+          .then(
+              function (resultado) {
+                  res.json(resultado);
+       
+              }
+          )
+            .catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+function comentar_2(req, res) {
+    var usuario_receber = require("../routes/usuarios");
+    // var comentario_post1 = req.body.comentario_post1Server;
+    var comentario_post2 = req.body.comentario_post2Server;
+    var fk_usuario = req.params.fk_usuario;
+    var fk_post = req.body.fk_postServer;
+
+
+    // Faça as validações dos valores
+    if (comentario_post2 == undefined) {
+        res.status(400).send("Seu comentario está undefined!");
     // }
     } else if (fk_usuario == undefined) {
         res.status(400).send("Seu id está undefined!");
@@ -100,7 +136,7 @@ function comentar(req, res) {
     } 
     else {
     
-        usuarioModel.comentar(fk_usuario, fk_post, comentario_post1, comentario_post2)
+        usuarioModel.comentar_2(fk_usuario, fk_post, comentario_post2)
           .then(
               function (resultado) {
                   res.json(resultado);
@@ -138,7 +174,8 @@ function exibir_post2(req, res){
 module.exports = {
     autenticar,
     cadastrar,
-    comentar, 
+    comentar_1, 
+    comentar_2, 
     exibir_post1,
     exibir_post2
 }

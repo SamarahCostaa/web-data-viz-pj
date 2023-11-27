@@ -29,7 +29,7 @@ var lista_comentario1 = [];
 var lista_comentario2 = [];
 
 
-function comentar(idPost){
+function comentar_1(idPost){
   /*Dando um parametro para a função que será idPost*/
 
     var nome = sessionStorage.NOME_USUARIO;
@@ -38,12 +38,34 @@ function comentar(idPost){
 
 
     var comentario_post1 = input_comentario1.value;
-    var comentario_post2 = input_comentario2.value;    
 
     if(comentario_post1 != ''){
      lista_comentario1.push(comentario_post1);
      div_comentario1.innerHTML +=  `${nome}: ${comentario_post1}<br>`
     } 
+
+    /*Enviando para o servidor com a fk do usuario*/
+    fetch(`/usuarios/comentar_1/${fk_usuario}`, {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+    body: JSON.stringify({
+       comentario_post1Server: comentario_post1,
+       fk_postServer: fk_post
+    }),
+  })   
+}
+
+function comentar_2(idPost){
+  /*Dando um parametro para a função que será idPost*/
+
+    var nome = sessionStorage.NOME_USUARIO;
+    var fk_usuario = sessionStorage.ID_USUARIO;
+    var fk_post = idPost; /*No HTML cada botão de comentar tem uma fk de acordo com o post*/
+
+
+    var comentario_post2 = input_comentario2.value;    
 
     if(comentario_post2 != ''){
      lista_comentario2.push(comentario_post2);
@@ -51,13 +73,12 @@ function comentar(idPost){
     } 
 
     /*Enviando para o servidor com a fk do usuario*/
-    fetch(`/usuarios/comentar/${fk_usuario}`, {
+    fetch(`/usuarios/comentar_2/${fk_usuario}`, {
        method: "POST",
        headers: {
          "Content-Type": "application/json",
        },
     body: JSON.stringify({
-       comentario_post1Server: comentario_post1,
        comentario_post2Server: comentario_post2,
        fk_postServer: fk_post
     }),

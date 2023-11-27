@@ -9,7 +9,11 @@
 
 html, body{
      height: 100%;
-     background-color: #D6A07E;
+     /* background-color: #D6A07E; */
+    background-image: url('../assets/imagens/fundo-enquete.png');
+
+    /* background-image: url('../assets/imagens/fundo-enquete.png'); */
+
 }
 
 li{

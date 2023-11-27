@@ -25,9 +25,9 @@ function cadastrar(imagemVar, nomeVar, emailVar, idadeVar, generoVar, senhaVar) 
     return database.executar(instrucao);
 }
 
-
 //COMENTAR!
-function comentar(fk_usuario, fk_post, comentario_post1, comentario_post2) {
+// var instrucao2 = '';
+function comentar_1(fk_usuario, fk_post, comentario_post1) {
     // idUser = sessionStorage.ID_USUARIO;
 
     console.log("Executando a função comentar no Model...");
@@ -36,14 +36,25 @@ function comentar(fk_usuario, fk_post, comentario_post1, comentario_post2) {
         INSERT INTO comentario (fk_usuario, fk_post, descricao) VALUES (${fk_usuario}, ${fk_post}, '${comentario_post1}');
     `;
 
-    var instrucao = `
-        INSERT INTO comentario (fk_usuario, fk_post, descricao) VALUES (${fk_usuario}, ${fk_post}, '${comentario_post2}');
+    console.log("Executando a instrução SQL: \n" + instrucao);
+
+    return database.executar(instrucao);
+}
+
+function comentar_2(fk_usuario, fk_post, comentario_post2) {
+    // idUser = sessionStorage.ID_USUARIO;
+
+    console.log("Executando a função comentar no Model...");
+
+    var instrucao  = `
+    INSERT INTO comentario (fk_usuario, fk_post, descricao) VALUES (${fk_usuario}, ${fk_post}, '${comentario_post2}');
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucao);
 
     return database.executar(instrucao);
 }
+
 
 
 /*SELECTS NA TABELA COMENTARIO*/
@@ -62,7 +73,8 @@ function exibir_post2(){
 module.exports = {
     autenticar,
     cadastrar,
-    comentar, 
+    comentar_1, 
+    comentar_2, 
     exibir_post1,
     exibir_post2
 };

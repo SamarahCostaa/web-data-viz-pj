@@ -12,8 +12,11 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
-router.post("/comentar/:fk_usuario", function (req, res) {
-    usuarioController.comentar(req, res);
+router.post("/comentar_1/:fk_usuario", function (req, res) {
+    usuarioController.comentar_1(req, res);
+}); 
+router.post("/comentar_2/:fk_usuario", function (req, res) {
+    usuarioController.comentar_2(req, res);
 }); 
 
 router.get("/exibir_post1", function (req, res) {
