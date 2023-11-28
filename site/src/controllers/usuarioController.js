@@ -330,11 +330,26 @@ function exibir_post2(req, res){
       });
 }
 
+
+
+
+
 function de0_a12(req, res){
-    usuarioModel.de0_a12(idade0_12).then((resultado) => {
-        res.status(200).json(resultado);
-      });
+    usuarioModel.de0_a12().then((resultado) => {
+        if (resultado.length > 0) {
+            /*acessando o resultado que é 'COUNT(idade)': 2, depois estou acessando o resultado da 'CONUNT(idade)'*/
+            const idade_12 = resultado[0]['COUNT(idade)'];
+            res.status(200).json({ idade_12: idade_12 });
+
+            // res.json({idade_12:resultado[0]}).status(200)
+            /*retorno para o front*/
+          } else {
+            res.status(204).json([]);
+          }
+        })
+        // console.log(idade_12)
 }
+    
 
 module.exports = {
     autenticar,

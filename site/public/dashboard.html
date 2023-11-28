@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="./css/tela-dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/validar-dash.js"></script>
-    <script src="./js/dashboard.js"></script>
+    <!-- <script src="./js/dashboard.js"></script> -->
     
 </head>
-<body onload="validarDash()">
+<body>
     <div class="header">
         <div class="container">
             <div class="frase" id="div_bemvindo">Bem-vinda <span id="nome_usuario"></span>!</div>
@@ -32,45 +32,73 @@
     </div> 
 
     <div class="corpo">
-        <div class="grafico-1 ">
+        <!-- <div class="grafico-1 ">
             <div class="area-grafico">
-                <div class="titulo">Categorias mais assistidas  :</div>
-                <!-- <canvas id="myChart2"></canvas> -->
+                <div class="titulo">Faixa de gêneros dos usuarios:</div>
+                <canvas id="myChart2"></canvas>
             </div>
-        </div>
+        </div> -->
         <div class="grafico-1">
             <div class="area-grafico">
-                <div class="titulo">Faxa etária dos dorameiros(as):</div>
+                <div class="titulo">Faixa etária dos usuário:</div>
                 <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
             </div>
         </div>
     </div>
 
-    <script>
-        de0_a12();
-        function atualizarGrafico(){
-        const labels = ['Idades']
+<script>
+    //  var idade0_12 = 0;
+       
+        /*async diz "aguarde para executar a função"*/
+        window.onload = validarDash(), de0_a12();
+
+        var total_menor_12;
+    async function de0_a12(){
+        console.log("entrando na função")
+       var idade_0_12 = await fetch("/usuarios/dashboard", { 
+         method: "GET", 
+       }) 
+       
+       total_menor_12 = (await idade_0_12.json()).idade_12
+       console.log(total_menor_12)
+    //    console.log(idade_12)
+       
+       const labels = ['Idades']
         const data = {
             labels: labels,
             datasets: [{
-                label: '0 á 15',
-                backgroundColor: 'rgb(0, 203, 219)',
-                borderColor: 'rgb(2,0,127)',
-                data: [`${idade0_12}`], /*dados inseridos no grafico*/
+                label: '0 á 12',
+                backgroundColor: '#6A9EDA',
+                borderColor: '#5086C1',
+                data: [total_menor_12], 
                 borderWidth: 1
             },
             {
-                label: '18 á 25',
-                backgroundColor: 'rgb(255, 255, 153)',
+                label: '13 á 19',
+                backgroundColor: '#FDFD96',
                 borderColor: 'rgb(204, 204, 0)',
-                data: [30], /*dados inseridos no grafico*/
+                data: [4], 
                 borderWidth: 1
             },
             {
-                label: 'Maior que 25',
-                backgroundColor: 'rgb(248, 196, 181)',
+                label: '20 á 25',
+                backgroundColor: '#F1889B',
                 borderColor: 'rgb(200, 0, 127)',
-                data: [25], /*dados inseridos no grafico*/
+                data: [15], 
+                borderWidth: 1
+            },
+            {
+                label: '26 á 30',
+                backgroundColor: '#5DC460',
+                borderColor: '#42AB49',
+                data: [14], 
+                borderWidth: 1
+            },
+            {
+                label: 'Mais que 30',
+                backgroundColor: '#C63637',
+                borderColor: '#E2504C',
+                data: [3], 
                 borderWidth: 1
             }
         
@@ -91,53 +119,53 @@
 
 
         // Segundo gráfico
-        const labels2 = ['Categoria'];
-        const data2 = {
-    labels: labels2,
-    datasets: [
-        {
-            label: 'Romance',
-            backgroundColor: 'rgb(248, 196, 181)',
-            borderColor: 'rgb(200, 0, 127)',
-            data: [40], /*dados inseridos no grafico*/
-            borderWidth: 1
-        },
-        {
-            label: 'Suspense',
-            backgroundColor: 'rgb(255, 255, 153)',
-            borderColor: 'rgb(204, 204, 0)',
-            data: [33], 
-            borderWidth: 1
-        },
-        {
-            label: 'Ação',
-            backgroundColor: 'rgb(0, 203, 219)',
-            borderColor: 'rgb(2, 0, 127)',
-            data: [10], 
-            borderWidth: 1
-        },
-        {
-            label: 'Sobrevivencia',
-            backgroundColor: 'rgb(150, 203, 0)',
-            borderColor: 'rgb(33, 100, 0)',
-            data: [30],
-            borderWidth: 1
-        }
-    ]
-};
+//         const labels2 = ['Categoria'];
+//         const data2 = {
+//     labels: labels2,
+//     datasets: [
+//         {
+//             label: 'Romance',
+//             backgroundColor: 'rgb(248, 196, 181)',
+//             borderColor: 'rgb(200, 0, 127)',
+//             data: [40], /*dados inseridos no grafico*/
+//             borderWidth: 1
+//         },
+//         {
+//             label: 'Suspense',
+//             backgroundColor: 'rgb(255, 255, 153)',
+//             borderColor: 'rgb(204, 204, 0)',
+//             data: [33], 
+//             borderWidth: 1
+//         },
+//         {
+//             label: 'Ação',
+//             backgroundColor: 'rgb(0, 203, 219)',
+//             borderColor: 'rgb(2, 0, 127)',
+//             data: [10], 
+//             borderWidth: 1
+//         },
+//         {
+//             label: 'Sobrevivencia',
+//             backgroundColor: 'rgb(150, 203, 0)',
+//             borderColor: 'rgb(33, 100, 0)',
+//             data: [30],
+//             borderWidth: 1
+//         }
+//     ]
+// };
 
-        const config2 = {
-            type: 'bar',
-            data: data2,
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    }
-                }
-            }
-        };
+//         const config2 = {
+//             type: 'bar',
+//             data: data2,
+//             options: {
+//                 responsive: true,
+//                 plugins: {
+//                     legend: {
+//                         position: 'top',
+//                     }
+//                 }
+//             }
+//         };
 
         
 
@@ -146,14 +174,11 @@
             config
         );
 
-        const myChart2 = new Chart(
-            document.getElementById('myChart2'),
-            config2
-        );
-    }
-    atualizarGrafico();
-
-    console.log(idade0_12)
-    </script>
+        // const myChart2 = new Chart(
+        //     document.getElementById('myChart2'),
+        //     config2
+        // );
+    }       
+</script>
 </body>
 </html>

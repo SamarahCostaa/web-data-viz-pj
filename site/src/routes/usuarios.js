@@ -3,6 +3,13 @@ var router = express.Router();
 
 var usuarioController = require("../controllers/usuarioController");
 
+
+router.get("/dashboard", function (req, res) {
+    console.log('na função')
+    usuarioController.de0_a12(req, res);
+});
+
+
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
 router.post("/cadastrar", function (req, res) {  //qual fk eu quero cadastrar
     usuarioController.cadastrar(req, res);
@@ -36,7 +43,6 @@ router.post("/comentar_6/:fk_usuario", function (req, res) {
     usuarioController.comentar_6(req, res);
 }); 
 
-
 router.get("/exibir_post1", function (req, res) {
     usuarioController.exibir_post1(req, res);
 }); 
@@ -45,9 +51,6 @@ router.get("/exibir_post2", function (req, res) {
     usuarioController.exibir_post2(req, res);
 }); 
 
-router.get("/de0_a12 ", function (req, res) {
-    usuarioController.de0_a12(req, res);
-});
 
 
 module.exports = router;
