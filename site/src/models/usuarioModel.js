@@ -55,9 +55,65 @@ function comentar_2(fk_usuario, fk_post, comentario_post2) {
     return database.executar(instrucao);
 }
 
+function comentar_3(fk_usuario, fk_post, comentario_post3) {
+    // idUser = sessionStorage.ID_USUARIO;
+
+    console.log("Executando a função comentar no Model...");
+
+    var instrucao  = `
+    INSERT INTO comentario (fk_usuario, fk_post, descricao) VALUES (${fk_usuario}, ${fk_post}, '${comentario_post3}');
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucao);
+
+    return database.executar(instrucao);
+}
+
+function comentar_4(fk_usuario, fk_post, comentario_post4) {
+    // idUser = sessionStorage.ID_USUARIO;
+
+    console.log("Executando a função comentar no Model...");
+
+    var instrucao  = `
+    INSERT INTO comentario (fk_usuario, fk_post, descricao) VALUES (${fk_usuario}, ${fk_post}, '${comentario_post4}');
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucao);
+
+    return database.executar(instrucao);
+}
+
+function comentar_5(fk_usuario, fk_post, comentario_post5) {
+    // idUser = sessionStorage.ID_USUARIO;
+
+    console.log("Executando a função comentar no Model...");
+
+    var instrucao  = `
+    INSERT INTO comentario (fk_usuario, fk_post, descricao) VALUES (${fk_usuario}, ${fk_post}, '${comentario_post5}');
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucao);
+
+    return database.executar(instrucao);
+}
+
+function comentar_6(fk_usuario, fk_post, comentario_post6) {
+    // idUser = sessionStorage.ID_USUARIO;
+
+    console.log("Executando a função comentar no Model...");
+
+    var instrucao  = `
+    INSERT INTO comentario (fk_usuario, fk_post, descricao) VALUES (${fk_usuario}, ${fk_post}, '${comentario_post6}');
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucao);
+
+    return database.executar(instrucao);
+}
 
 
-/*SELECTS NA TABELA COMENTARIO*/
+
+/*SELECTS NAS TABELAS*/
 function exibir_post1(){
      var query = `SELECT usuario.nome, comentario.descricao FROM usuario JOIN comentario ON id_usuario = fk_usuario WHERE fk_post = 1 ORDER BY dt_hora DESC;`;
 
@@ -70,11 +126,53 @@ function exibir_post2(){
      return database.executar(query);
 }
 
+function de0_a12(){
+    var query = `SELECT COUNT(idade) FROM usuario WHERE idade <= 12;`;
+
+    return database.executar(query);
+}
+
+function de13_a19(){
+    
+    var query = `SELECT COUNT(idade) FROM usuario WHERE idade  >= 13 AND idade <= 19;`;
+
+    return database.executar(query);
+}
+
+function de20_a25(){
+    var query = `SELECT COUNT(idade) FROM usuario WHERE idade  >= 20 AND idade <= 25;`;
+
+    return database.executar(query);
+    
+}
+
+function de26_a30(){
+    var query = `SELECT COUNT(idade) FROM usuario WHERE idade  >= 26 AND idade <= 30;`;
+
+    return database.executar(query);
+    
+}
+
+function mais_que_30(){
+    var query = `SELECT COUNT(idade) FROM usuario WHERE idade  >= 30;`;
+
+    return database.executar(query);    
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     comentar_1, 
     comentar_2, 
+    comentar_3, 
+    comentar_4, 
+    comentar_5, 
+    comentar_6, 
+    de0_a12,
+    de13_a19,
+    de20_a25,
+    de26_a30,
+    mais_que_30,
     exibir_post1,
     exibir_post2
 };

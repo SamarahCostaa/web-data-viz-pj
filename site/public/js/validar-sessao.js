@@ -20,6 +20,10 @@ function validarSessao(){
     if(imagem_usuario && urlDaImagem){
         imagem_usuario.src = urlDaImagem;
         mini_imagem_usuario.src = sessionStorage.IMAGEM_USUARIO;
+    }else{
+        imagem_usuario.src = './assets/icon/perfil.png'
+        mini_imagem_usuario.src = './assets/icon/perfil.png'
+
     }
     
     /*Inserindo os dados nas spans*/

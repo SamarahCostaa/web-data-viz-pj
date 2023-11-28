@@ -9,7 +9,9 @@
 
 html, body{
     height: 100%;
-    background-color: #D6A07E;
+    /* background-color: #D6A07E; */
+    background-image: url('../assets/imagens/fundo-enquete.png');
+
 }
 
 li{
@@ -141,17 +143,17 @@ li{
     width: 80%;
     height: 50%;
     flex-direction: row;
-    /* background-color: slategray; */
+    /* background-color: #DC8069; */
     align-items: center;
     justify-content: space-evenly;
 }
 
-.genero{
+.area-grafico{
     flex-direction: column;
     display: flex;
     width: 30%;
-    border: 1px solid rgb(248, 196, 181);
-
+    border: 1px solid #BC664D;
+    background-color: #F8C4B5;
     padding: 64px;
     /* background-color:bisque; */
     /* flex-direction: column; */
@@ -161,8 +163,7 @@ li{
         flex-direction: column;
         display: flex;
         width: 30%;
-        border: 1px solid rgb(248, 196, 181);
-    
+        border: 1px solid rgb(248, 196, 181);    
         justify-content: center;
         align-items: center;
         padding: 60px;

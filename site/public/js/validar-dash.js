@@ -13,7 +13,7 @@ function validarDash(){
     if(imagem_usuario && urlDaImagem){ /*se existir a imagem e a url*/
          imagem_usuario.src = urlDaImagem;
     }else{
-         imagem_usuario.src = './perfil.png'
+         imagem_usuario.src = './assets/icon/perfil.png'
     }
     
     if (email !== undefined  && nome !== undefined) { 

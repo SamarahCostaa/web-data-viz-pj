@@ -110,31 +110,40 @@ li{
 .publicacoes{
      display: flex;
      width: 76%;
-     height: 100%;
+     /* height: 100%; */
      flex-direction: column;
      /* background-color: aqua; */
      margin-left: 22%; 
-     justify-content: center ;
+     background-color: #D6A07E;
+
+     /* background-color: #BC664D; */
+     /* justify-content: center ; */
      /* margin-top: 10px; */
     /* margin-top: 10%; */
 }
 
 .post{
      display: flex;
-     margin-top: 65px;
+     margin-top: 40px;
+     margin-bottom: 70px;
      /* background-color: yellow; */
      /* margin-top: 20px; */
+}
+.post-com-alerta{
+    /* display: flex; */
+    width: 100vw;
+
 }
 
 .borda-img{
     display: flex;
-    width: 40%;
+    width: 85%;
     height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #F8C4B5 ;
-    margin-right: 15px;
+    margin-left: 35px;
 }
 
 .img-editada{
@@ -153,17 +162,18 @@ li{
     display: flex;
     width: 50%;
     height: 50%;
-    margin-left: 15px;
+    margin-right: 20px;
     align-items: flex-start;
     text-align: justify;
     flex-direction: column;
-    /* background-color: chocolate; */
+    background-color: #D6A07E;
 }
 
 .caixa-comentar{
     display: flex;
     margin-top: 15px;
     flex-direction: column;
+    background-color: #D6A07E;
     /* margin-left: 10px; */
 }
 
@@ -223,11 +233,15 @@ li{
     margin-top: 10px;
     text-align:start;
 }
+#di_comentario1, #div_comentario2{
+    background-color: #D6A07E;
+}
 
 .exibir-apagar{
     display: flex;
     flex-direction: column;
     margin-top: 50px;
+    background-color: #D6A07E;
 }
 
 .exibindo{
@@ -236,4 +250,19 @@ li{
     height: 20vh;
     width: 100%;
     overflow-y: auto; /*INSERINDO BARRA DE ROLAGE VERTICAL (NO EIXO Y)*/
+    background-color: #D6A07E;
+
+}
+
+.atencao-frase{
+    display: flex;
+    margin-top: -55px;
+    margin-bottom: 35px;
+    width: 30vw;
+    /* flex-direction: column; */
+}
+.atencao{
+    font-size: 12px;
+    margin-left: 35px;
+    width: 95%;
 }

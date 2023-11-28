@@ -13,6 +13,8 @@ function validarDorama(){
 
     if(imagem_usuario && urlDaImagem){ /*se existir a imagem e a url*/
         imagem_usuario.src = urlDaImagem;
+    }else{
+      imagem_usuario.src = './assets/icon/perfil.png'
     }
     
     if (email !== undefined  && nome !== undefined) {
@@ -27,6 +29,10 @@ function validarDorama(){
 /*Todos os comentario que o usuario inserir estão aqui:*/
 var lista_comentario1 = [];
 var lista_comentario2 = [];
+var lista_comentario3 = [];
+var lista_comentario4 = [];
+var lista_comentario5 = [];
+var lista_comentario6 = [];
 
 
 function comentar_1(idPost){
@@ -80,6 +86,118 @@ function comentar_2(idPost){
        },
     body: JSON.stringify({
        comentario_post2Server: comentario_post2,
+       fk_postServer: fk_post
+    }),
+  })   
+}
+
+function comentar_3(idPost){
+  /*Dando um parametro para a função que será idPost*/
+
+    var nome = sessionStorage.NOME_USUARIO;
+    var fk_usuario = sessionStorage.ID_USUARIO;
+    var fk_post = idPost; /*No HTML cada botão de comentar tem uma fk de acordo com o post*/
+
+
+    var comentario_post3 = input_comentario3.value;    
+
+    if(comentario_post3 != ''){
+     lista_comentario3.push(comentario_post3);
+     div_comentario3.innerHTML +=  `${nome}: ${comentario_post3}<br>`
+    } 
+
+    /*Enviando para o servidor com a fk do usuario*/
+    fetch(`/usuarios/comentar_3/${fk_usuario}`, {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+    body: JSON.stringify({
+       comentario_post3Server: comentario_post3,
+       fk_postServer: fk_post
+    }),
+  })   
+}
+
+function comentar_4(idPost){
+  /*Dando um parametro para a função que será idPost*/
+
+    var nome = sessionStorage.NOME_USUARIO;
+    var fk_usuario = sessionStorage.ID_USUARIO;
+    var fk_post = idPost; /*No HTML cada botão de comentar tem uma fk de acordo com o post*/
+
+
+    var comentario_post4 = input_comentario4.value;    
+
+    if(comentario_post4 != ''){
+     lista_comentario4.push(comentario_post4);
+     div_comentario4.innerHTML +=  `${nome}: ${comentario_post4}<br>`
+    } 
+
+    /*Enviando para o servidor com a fk do usuario*/
+    fetch(`/usuarios/comentar_4/${fk_usuario}`, {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+    body: JSON.stringify({
+       comentario_post4Server: comentario_post4,
+       fk_postServer: fk_post
+    }),
+  })   
+}
+
+function comentar_5(idPost){
+  /*Dando um parametro para a função que será idPost*/
+
+    var nome = sessionStorage.NOME_USUARIO;
+    var fk_usuario = sessionStorage.ID_USUARIO;
+    var fk_post = idPost; /*No HTML cada botão de comentar tem uma fk de acordo com o post*/
+
+
+    var comentario_post5 = input_comentario5.value;    
+
+    if(comentario_post5 != ''){
+     lista_comentario5.push(comentario_post5);
+     div_comentario5.innerHTML +=  `${nome}: ${comentario_post5}<br>`
+    } 
+
+    /*Enviando para o servidor com a fk do usuario*/
+    fetch(`/usuarios/comentar_5/${fk_usuario}`, {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+    body: JSON.stringify({
+       comentario_post5Server: comentario_post5,
+       fk_postServer: fk_post
+    }),
+  })   
+}
+
+function comentar_6(idPost){
+  /*Dando um parametro para a função que será idPost*/
+
+    var nome = sessionStorage.NOME_USUARIO;
+    var fk_usuario = sessionStorage.ID_USUARIO;
+    var fk_post = idPost; /*No HTML cada botão de comentar tem uma fk de acordo com o post*/
+
+
+    var comentario_post6 = input_comentario6.value;    
+
+    if(comentario_post6 != ''){
+     lista_comentario6.push(comentario_post6);
+     div_comentario6.innerHTML +=  `${nome}: ${comentario_post6}<br>`
+    } 
+
+    /*Enviando para o servidor com a fk do usuario*/
+    fetch(`/usuarios/comentar_6/${fk_usuario}`, {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+    body: JSON.stringify({
+       comentario_post6Server: comentario_post6,
        fk_postServer: fk_post
     }),
   })   

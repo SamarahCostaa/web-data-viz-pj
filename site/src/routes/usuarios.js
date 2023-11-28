@@ -15,9 +15,27 @@ router.post("/autenticar", function (req, res) {
 router.post("/comentar_1/:fk_usuario", function (req, res) {
     usuarioController.comentar_1(req, res);
 }); 
+
 router.post("/comentar_2/:fk_usuario", function (req, res) {
     usuarioController.comentar_2(req, res);
 }); 
+
+router.post("/comentar_3/:fk_usuario", function (req, res) {
+    usuarioController.comentar_3(req, res);
+}); 
+
+router.post("/comentar_4/:fk_usuario", function (req, res) {
+    usuarioController.comentar_4(req, res);
+});
+
+router.post("/comentar_5/:fk_usuario", function (req, res) {
+    usuarioController.comentar_5(req, res);
+});
+
+router.post("/comentar_6/:fk_usuario", function (req, res) {
+    usuarioController.comentar_6(req, res);
+}); 
+
 
 router.get("/exibir_post1", function (req, res) {
     usuarioController.exibir_post1(req, res);
@@ -26,6 +44,10 @@ router.get("/exibir_post1", function (req, res) {
 router.get("/exibir_post2", function (req, res) {
     usuarioController.exibir_post2(req, res);
 }); 
+
+router.get("/de0_a12 ", function (req, res) {
+    usuarioController.de0_a12(req, res);
+});
 
 
 module.exports = router;
