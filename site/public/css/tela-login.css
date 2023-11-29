@@ -24,170 +24,168 @@ li{
 
 /* HEADER  */
 .header a{
-    text-decoration: none; 
-    color: #BC664D;   
+     text-decoration: none; 
+     color: #BC664D;   
 }
 
 .header{
-    display: flex;
-    width: 100%;
-    height: 95px;
-    background-color: #F8C4B5;
-    position: fixed;
+     display: flex;
+     width: 100%;
+     height: 95px;
+     background-color: #F8C4B5;
+     position: fixed;
 }
 
 .container{
-    display: flex;
-    width: 80%;
-    height: 100%;
-    margin: 0 10%;
-    justify-content: space-between;
-    align-items: center;   
+     display: flex;
+     width: 80%;
+     height: 100%;
+     margin: 0 10%;
+     justify-content: space-between;
+     align-items: center;   
 }
 .imagem-logo{
-    display: flex;
-    width: 80px;
-    height: 70px;
-    padding: 10px 0 20px 1px;
+     display: flex;
+     width: 80px;
+     height: 70px;
+     padding: 10px 0 20px 1px;
 }
 .navbar{
-    display: flex; 
-    justify-content: space-between;
-    align-items: center; 
+     display: flex; 
+     justify-content: space-between;
+     align-items: center; 
 }
 
 
-/* QUADRADO COMPLETO */
+                                     /* QUADRADO COMPLETO */
 
 .espaco-quadrado{
-    display: flex;
-    width: 80%;
-    padding: 130px 0 10px 135px;
-    justify-content: center;
-    align-items: center;
-    animation: animando 1s ease;
+     display: flex;
+     width: 80%;
+     padding: 130px 0 10px 135px;
+     justify-content: center;
+     align-items: center;
+     animation: animando 1s ease;
 }
 
 .quadrado-inteiro{
-    display: flex;
-    width: 78%;
-    /* height: 75vh; */
-    border-radius: 20px;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #F8C4B5;
-    box-shadow: 0 0 10px 4px rgba(114, 65, 49, 0.589);
+     display: flex;
+     width: 78%;
+     border-radius: 20px;
+     justify-content: flex-start;
+     align-items: center;
+     background-color: #F8C4B5;
+     box-shadow: 0 0 10px 4px rgba(114, 65, 49, 0.589);
 }
 
 
-/* INFORMAÇÕES DO QUADRADO ESCURO */
+                                     /* INFORMAÇÕES DO QUADRADO ESCURO */
 .bem-vindo a{
-    text-decoration: none; 
+     text-decoration: none; 
 }
 
 .bem-vindo{
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    height: 75vh;
-    border-radius: 20px 0 0 20px;
-    background-color: #DC8069;
-    justify-content: center;
-    align-items: center;
+     display: flex;
+     flex-direction: column;
+     width: 40%;
+     height: 75vh;
+     border-radius: 20px 0 0 20px;
+     background-color: #DC8069;
+     justify-content: center;
+     align-items: center;
 }
 
 .mensagem{ 
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    color: #F8C4B5;
-    text-align: center;
-    margin: 0 0 35px 0;
+     justify-content: center;
+     align-items: center;
+     color: #F8C4B5;
+     text-align: center;
+     margin: 0 0 35px 0;
 }
 
 .titulo-bemvindo{
-    font-size: 30px;
-    font-weight: bold;
-    /* margin: 0 0 20px 0; */
-}
-.botao{
-    padding: 15px;
-    border-radius: 20px;
-    color: #F8C4B5;
-    background-color: #BC664D;
-    box-shadow: 0 0 5px 1px #F8C4B5;
-    /* margin-top: 20px; */
+     font-size: 30px;
+     font-weight: bold;
 }
 
-/* INFORMAÇÕES DO QUADRADO CLARO */
+.botao{
+     padding: 15px;
+     border-radius: 20px;
+     color: #F8C4B5;
+     background-color: #BC664D;
+     box-shadow: 0 0 5px 1px #F8C4B5;
+}
+
+                                     /* INFORMAÇÕES DO QUADRADO CLARO */
 .informacao{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0 0 155px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin: 0 0 0 155px;
 }
 
 .titulo-login{
-    justify-content: center;
-    align-items: center;
-    color: #BC664D;
-    margin: 10px 0;
+     justify-content: center;
+     align-items: center;
+     color: #BC664D;
+     margin: 10px 0;
 }
 
 .caixa{
-    display: flex;
-    justify-content: space-between;
-    background-color: #D9D9D9;
-    border-radius: 8px;
-    margin: 0 20px;
-    padding: 2px 5px;
-    margin: 10px 5px;
-    width: 100%;
-    color: #BC664D;
+     display: flex;
+     justify-content: space-between;
+     background-color: #D9D9D9;
+     border-radius: 8px;
+     margin: 0 20px;
+     padding: 2px 5px;
+     margin: 10px 5px;
+     width: 100%;
+     color: #BC664D;
 }
 
 .link{
-    margin: 15px 0;
-    display: flex;
-    color: #BC664D;
+     margin: 15px 0;
+     display: flex;
+     color: #BC664D;
 }
 .link-esqueci{
-    cursor: pointer;
+     cursor: pointer;
 }
 .link a{
-    color: #BC664D;
+     color: #BC664D;
 }
 
 .botao-entrar{
-    padding: 15px;
-    border-radius: 20px;
-    color: #F8C4B5;
-    background-color: #BC664D;
-    box-shadow: 0 0 5px 1px #ecd7d0;
-    cursor: pointer;
+     padding: 15px;
+     border-radius: 20px;
+     color: #F8C4B5;
+     background-color: #BC664D;
+     box-shadow: 0 0 5px 1px #ecd7d0;
+     cursor: pointer;
 }
 
-/* VALIDÇÃO */
+
+                                            /* VALIDÇÃO */
 .nome-errado, .email-errado, .senha-errado{
-    padding: 2px 0 0 25px;
-    color: rgb(186, 11, 11);
-    display: flex;    
+     padding: 2px 0 0 25px;
+     color: rgb(186, 11, 11);
+     display: flex;    
 }
 .nome-certo, .email-certo, .senha-certo{
-    padding: 2px 0 0 25px;
-    color: rgb(139, 201, 46);
-    display: flex;
+     padding: 2px 0 0 25px;
+     color: rgb(139, 201, 46);
+     display: flex;
 
 }
 
 @keyframes animando{ 
     0%{
-        transform: translateX(-120px);
-        opacity: 0;
+         transform: translateX(-120px);
+         opacity: 0;
     }
     100%{
-        transform: translateX(0);
-        opacity: 1;
+         transform: translateX(0);
+         opacity: 1;
     }
 }
