@@ -56,28 +56,6 @@ li{
     align-items: center; 
 }
 
-/* ALERTA ERRO */
-.alerta_erro{
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .card_erro {
-    display: none;
-    background-color: #fff;
-    color: black;
-    width: 230px;
-    position: fixed;
-    border-radius: 4px;
-    border: #e6005a 3px solid;
-    padding: 10px;
-    margin-right: 10%;
-  }
-  
-  .card_erro #mensagem_erro{
-    font-weight: 500;
-    font-size: 20px;
-  }
 
 /* QUADRADO COMPLETO */
 
@@ -92,8 +70,8 @@ li{
 
 .quadrado-inteiro{
     display: flex;
-    width: 100%;
-    height: 75vh;
+    width: 78%;
+    /* height: 75vh; */
     border-radius: 20px;
     justify-content: flex-start;
     align-items: center;
@@ -148,8 +126,6 @@ li{
     justify-content: center;
     align-items: center;
     margin: 0 0 0 155px;
-    /* background-color: yellowgreen; */
-    /* padding-top: 50px; */
 }
 
 .titulo-login{
@@ -165,7 +141,7 @@ li{
     background-color: #D9D9D9;
     border-radius: 8px;
     margin: 0 20px;
-    padding: 2px 0;
+    padding: 2px 5px;
     margin: 10px 5px;
     width: 100%;
     color: #BC664D;
@@ -193,13 +169,10 @@ li{
 }
 
 /* VALIDÇÃO */
-
 .nome-errado, .email-errado, .senha-errado{
     padding: 2px 0 0 25px;
     color: rgb(186, 11, 11);
-    display: flex;
-    /* margin: 5px 80px; */
-    
+    display: flex;    
 }
 .nome-certo, .email-certo, .senha-certo{
     padding: 2px 0 0 25px;
