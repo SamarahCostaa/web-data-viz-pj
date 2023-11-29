@@ -111,11 +111,21 @@ li{
 
 
 
+/*ÁREA DE ANALISE*/
+.analise{
+    display: flex;
+    width: 72%;
+    margin-left: 24%;
+    margin-right: 24%;
+    padding-top: 50px;
+    /* background-color: #b1bc4d; */
+}
 
-
-
-
-
+.dados-analisados{
+    display: flex;
+    background-color: #BC664D;
+    border: 1px solid black;
+}
 
 
 
@@ -137,7 +147,6 @@ li{
     /* align-items: flex-end; */
 }
 
-/* GRAFICO DE PIZZA */
 .grafico{
     display: flex;
     margin-top: 50px;
