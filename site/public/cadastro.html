@@ -82,7 +82,11 @@
                     
                     <div class="bloco-2">
                          <div class="genero">
-                             <p>Gênero:</p><input type="text" id="input_genero" class="caixa" onkeyup="validar()">
+                             <p>Gênero:</p><select id="input_genero"  class="caixa" onkeyup="validar()">
+                                <option value="Feminino">Feminino</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Outro">Outros</option>
+                             </select>
                          </div>
                          <div class="genero-certo" id="div_genero"></div>
                          <div class="genero-errado" id="div_genero_errado"></div>
