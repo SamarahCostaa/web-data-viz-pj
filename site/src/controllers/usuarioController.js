@@ -330,16 +330,13 @@ function exibir_post2(req, res){
       });
 }
 
-
-
-
-
 function de0_a12(req, res){
     usuarioModel.de0_a12().then((resultado) => {
         if (resultado.length > 0) {
             /*acessando o resultado que é 'COUNT(idade)': 2, depois estou acessando o resultado da 'CONUNT(idade)'*/
             const idade_12 = resultado[0]['COUNT(idade)'];
             res.status(200).json({ idade_12: idade_12 });
+            /*'COUNT(idade)': 3*/
 
             // res.json({idade_12:resultado[0]}).status(200)
             /*retorno para o front*/
@@ -347,9 +344,92 @@ function de0_a12(req, res){
             res.status(204).json([]);
           }
         })
-        // console.log(idade_12)
 }
-    
+
+function de13_a19(req, res){
+    usuarioModel.de13_a19().then((resultado) => {
+        if(resultado.length > 0){
+            const idade_19 = resultado[0]['COUNT(idade)'];
+            res.status(200).json({idade_19: idade_19});
+            console.log("Deu certo" + resultado)
+        }else {
+            res.status(204).json([]);
+            console.log("Não deu certo")
+          }
+    })
+}
+
+function de20_a25(req, res){
+    usuarioModel.de20_a25().then((resultado) => {
+        if(resultado.length > 0){
+            const idade_25 = resultado[0]['COUNT(idade)'];
+            res.status(200).json({idade_25: idade_25});
+        }else{
+            res.status(204).json([]);
+        }
+    })
+}
+
+function de26_a30(req, res){
+    usuarioModel.de26_a30().then((resultado) => {
+        if(resultado.length > 0){
+            const idade_30 = resultado[0]['COUNT(idade)'];
+            res.status(200).json({idade_30: idade_30});
+        }else{
+            res.status(204).json([]);
+        }
+    }
+    )
+}
+
+function mais_que_30(req, res){
+    usuarioModel.mais_que_30().then((resultado) => {
+        if(resultado.length > 0){
+            const maior_30 = resultado[0]['COUNT(idade)'];
+            res.status(200).json({maior_30: maior_30});
+        }else{
+            res.status(204).json([]);
+        }
+    }
+    )
+}
+
+function exibir_feminino(req, res){
+    usuarioModel.exibir_feminino().then((resultado) => {
+        if(resultado.length > 0){
+            const genero_feminino = resultado[0]['COUNT(genero)'];
+            res.status(200).json({genero_feminino: genero_feminino});
+        }else{
+            res.status(204).json([]);
+        }
+    }
+    )
+}
+
+function exibir_masculino(req, res){
+    usuarioModel.exibir_masculino().then((resultado) => {
+        if(resultado.length > 0){
+            const genero_masculino = resultado[0]['COUNT(genero)'];
+            res.status(200).json({genero_masculino: genero_masculino});
+        }else{
+            res.status(204).json([]);
+        }
+    }
+    )
+}
+
+function exibir_outro(req, res){
+    usuarioModel.exibir_outro().then((resultado) => {
+        if(resultado.length > 0){
+            const genero_outro = resultado[0]['COUNT(genero)'];
+            res.status(200).json({genero_outro: genero_outro});
+        }else{
+            res.status(204).json([]);
+        }
+    }
+    )
+}
+
 
 module.exports = {
     autenticar,
@@ -362,5 +442,12 @@ module.exports = {
     comentar_6, 
     exibir_post1,
     exibir_post2,
-    de0_a12
+    de0_a12,
+    de13_a19,
+    de20_a25, 
+    de26_a30,
+    mais_que_30,
+    exibir_feminino,
+    exibir_masculino,
+    exibir_outro
 }

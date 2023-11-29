@@ -3,11 +3,47 @@ var router = express.Router();
 
 var usuarioController = require("../controllers/usuarioController");
 
+router.get("/trezeDezenove", function (req, res) {
+    usuarioController.de13_a19(req, res);
+});
 
 router.get("/dashboard", function (req, res) {
-    console.log('na função')
     usuarioController.de0_a12(req, res);
 });
+
+router.get("/de20anosAte25", function (req, res) {
+    usuarioController.de20_a25(req, res);
+});
+
+router.get("/vinteSeisTrinta", function (req, res) {
+    usuarioController.de26_a30(req, res);
+});
+
+router.get("/maiorTrinta", function (req, res) {
+    usuarioController.mais_que_30(req, res);
+});
+
+
+
+router.get("/feminino", function (req, res) {
+    usuarioController.exibir_feminino(req, res);
+});
+
+router.get("/masculino", function (req, res) {
+    usuarioController.exibir_masculino(req, res);
+});
+
+router.get("/outro", function (req, res) {
+    usuarioController.exibir_outro(req, res);
+});
+
+
+
+
+
+
+
+
 
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js

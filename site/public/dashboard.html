@@ -32,42 +32,56 @@
     </div> 
 
     <div class="corpo">
-        <!-- <div class="grafico-1 ">
+        <div class="grafico-1 ">
             <div class="area-grafico">
                 <div class="titulo">Faixa de gêneros dos usuarios:</div>
                 <canvas id="myChart2"></canvas>
             </div>
-        </div> -->
+        </div>
         <div class="grafico-1">
             <div class="area-grafico">
-                <div class="titulo">Faixa etária dos usuário:</div>
+                <div class="titulo">Faixa etária dos dorameiros:</div>
                 <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
             </div>
         </div>
     </div>
 
 <script>
-    //  var idade0_12 = 0;
-       
-        /*async diz "aguarde para executar a função"*/
-        window.onload = validarDash(), de0_a12();
+    window.onload = plotar_grafico(), validarDash();  
+        
+    async function plotar_grafico(){
+        validarDash()
 
-        var total_menor_12;
-    async function de0_a12(){
-        console.log("entrando na função")
-       var idade_0_12 = await fetch("/usuarios/dashboard", { 
-         method: "GET", 
-       }) 
+        var idade_0_12 = await fetch("/usuarios/dashboard", { 
+            method: "GET", 
+        }) 
+
+        var receber_idade19 = await fetch("/usuarios/trezeDezenove", { 
+            method: "GET", 
+        }) 
+            
+        var receber_idade25 = await fetch("/usuarios/de20anosAte25", { 
+            method: "GET", 
+        })
+        
+        var receber_idade30 = await fetch("/usuarios/vinteSeisTrinta", { 
+            method: "GET", 
+        })
+        
+        var total_idade30 = (await receber_idade30.json()).idade_30
+        
+        var total_idade25 = (await receber_idade25.json()).idade_25
+
+        var total_idade19 = (await receber_idade19.json()).idade_19
        
-       total_menor_12 = (await idade_0_12.json()).idade_12
-       console.log(total_menor_12)
-    //    console.log(idade_12)
+        var total_menor_12 = (await idade_0_12.json()).idade_12
+
        
        const labels = ['Idades']
         const data = {
             labels: labels,
             datasets: [{
-                label: '0 á 12',
+                label: 'De 0 á 12',
                 backgroundColor: '#6A9EDA',
                 borderColor: '#5086C1',
                 data: [total_menor_12], 
@@ -77,21 +91,21 @@
                 label: '13 á 19',
                 backgroundColor: '#FDFD96',
                 borderColor: 'rgb(204, 204, 0)',
-                data: [4], 
+                data: [total_idade19], 
                 borderWidth: 1
             },
             {
                 label: '20 á 25',
                 backgroundColor: '#F1889B',
                 borderColor: 'rgb(200, 0, 127)',
-                data: [15], 
+                data: [total_idade25], 
                 borderWidth: 1
             },
             {
                 label: '26 á 30',
                 backgroundColor: '#5DC460',
                 borderColor: '#42AB49',
-                data: [14], 
+                data: [total_idade30], 
                 borderWidth: 1
             },
             {
@@ -109,76 +123,88 @@
             data: data,
             options: {
                 indexAxis: 'y',
-    elements: {
-      bar: {
-        borderWidth: 2,
-      }
-    },
+        elements: {
+        bar: {
+            borderWidth: 2,
+        }
+        },
             }
         };
 
 
-        // Segundo gráfico
-//         const labels2 = ['Categoria'];
-//         const data2 = {
-//     labels: labels2,
-//     datasets: [
-//         {
-//             label: 'Romance',
-//             backgroundColor: 'rgb(248, 196, 181)',
-//             borderColor: 'rgb(200, 0, 127)',
-//             data: [40], /*dados inseridos no grafico*/
-//             borderWidth: 1
-//         },
-//         {
-//             label: 'Suspense',
-//             backgroundColor: 'rgb(255, 255, 153)',
-//             borderColor: 'rgb(204, 204, 0)',
-//             data: [33], 
-//             borderWidth: 1
-//         },
-//         {
-//             label: 'Ação',
-//             backgroundColor: 'rgb(0, 203, 219)',
-//             borderColor: 'rgb(2, 0, 127)',
-//             data: [10], 
-//             borderWidth: 1
-//         },
-//         {
-//             label: 'Sobrevivencia',
-//             backgroundColor: 'rgb(150, 203, 0)',
-//             borderColor: 'rgb(33, 100, 0)',
-//             data: [30],
-//             borderWidth: 1
-//         }
-//     ]
-// };
+        var receber_feminino = await fetch("/usuarios/feminino", { 
+            method: "GET", 
+        })
 
-//         const config2 = {
-//             type: 'bar',
-//             data: data2,
-//             options: {
-//                 responsive: true,
-//                 plugins: {
-//                     legend: {
-//                         position: 'top',
-//                     }
-//                 }
-//             }
-//         };
-
+        var receber_masculino = await fetch("/usuarios/masculino", { 
+            method: "GET", 
+        })
         
+        var receber_outro = await fetch("/usuarios/outro", { 
+            method: "GET", 
+        })
+
+        var exibir_feminino_grafico = (await receber_feminino.json()).genero_feminino
+        console.log(exibir_feminino_grafico)
+        
+        var exibir_masculino_grafico = (await receber_masculino.json()).genero_masculino
+        console.log(exibir_masculino_grafico)
+        
+        var exibir_outro_grafico = (await receber_outro.json()).genero_outro
+        console.log(exibir_outro_grafico)
+
+         const labels2 = ['Gêneros'];
+         const data2 = {
+         labels: labels2,
+         datasets: [
+         {
+             label: 'Feminino',
+             backgroundColor: '#F1889B',
+             borderColor: 'rgb(200, 0, 127)',
+             data: [exibir_feminino_grafico], /*dados inseridos no grafico*/
+             borderWidth: 1
+         },
+         {
+             label: 'Masculino',
+             backgroundColor: '#6A9EDA',
+                borderColor: '#5086C1',
+             data: [exibir_masculino_grafico], 
+             borderWidth: 1
+         },
+         {
+             label: 'Outros',
+             backgroundColor: '#FDFD96',
+             borderColor: 'rgb(204, 204, 0)',
+             data: [exibir_outro_grafico], 
+             borderWidth: 1
+         }
+     ]
+ };
+
+        const config2 = {
+             type: 'bar',
+             data: data2,
+             options: {
+                 responsive: true,
+                 plugins: {
+                     legend: {
+                         position: 'top',
+                     }
+                 }
+             }
+         };
 
         const myChart = new Chart(
             document.getElementById('myChart'),
             config
         );
 
-        // const myChart2 = new Chart(
-        //     document.getElementById('myChart2'),
-        //     config2
-        // );
-    }       
+         const myChart2 = new Chart(
+             document.getElementById('myChart2'),
+             config2
+         );
+    }    
+       
 </script>
 </body>
 </html>

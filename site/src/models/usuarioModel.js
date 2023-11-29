@@ -148,15 +148,31 @@ function de20_a25(){
 
 function de26_a30(){
     var query = `SELECT COUNT(idade) FROM usuario WHERE idade  >= 26 AND idade <= 30;`;
-
-    return database.executar(query);
-    
+    return database.executar(query); 
 }
 
 function mais_que_30(){
     var query = `SELECT COUNT(idade) FROM usuario WHERE idade  >= 30;`;
 
     return database.executar(query);    
+}
+
+function exibir_feminino(){
+    var query = `SELECT COUNT(genero) FROM usuario WHERE genero = 'Feminino';`;
+
+    return database.executar(query)
+}
+
+function exibir_masculino(){
+    var query = `SELECT COUNT(genero) FROM usuario WHERE genero = 'Masculino';`;
+
+    return database.executar(query)
+}
+
+function exibir_outro(){
+    var query = `SELECT COUNT(genero) FROM usuario WHERE genero = 'Outro';`;
+
+    return database.executar(query)
 }
 
 module.exports = {
@@ -174,5 +190,8 @@ module.exports = {
     de26_a30,
     mais_que_30,
     exibir_post1,
-    exibir_post2
+    exibir_post2,
+    exibir_feminino,
+    exibir_masculino,
+    exibir_outro
 };
