@@ -125,6 +125,26 @@ function exibir_post2(){
 
      return database.executar(query);
 }
+function exibir_post3(){
+     var query = `SELECT usuario.nome, comentario.descricao FROM usuario JOIN comentario ON id_usuario = fk_usuario WHERE fk_post = 3 ORDER BY dt_hora DESC;`;
+
+     return database.executar(query);
+}
+function exibir_post4(){
+     var query = `SELECT usuario.nome, comentario.descricao FROM usuario JOIN comentario ON id_usuario = fk_usuario WHERE fk_post = 4 ORDER BY dt_hora DESC;`;
+
+     return database.executar(query);
+}
+function exibir_post5(){
+     var query = `SELECT usuario.nome, comentario.descricao FROM usuario JOIN comentario ON id_usuario = fk_usuario WHERE fk_post = 5 ORDER BY dt_hora DESC;`;
+
+     return database.executar(query);
+}
+function exibir_post6(){
+     var query = `SELECT usuario.nome, comentario.descricao FROM usuario JOIN comentario ON id_usuario = fk_usuario WHERE fk_post = 6 ORDER BY dt_hora DESC;`;
+
+     return database.executar(query);
+}
 
 function de0_a12(){
     var query = `SELECT COUNT(idade) FROM usuario WHERE idade <= 12;`;
@@ -191,6 +211,10 @@ module.exports = {
     mais_que_30,
     exibir_post1,
     exibir_post2,
+    exibir_post3,
+    exibir_post4,
+    exibir_post5,
+    exibir_post6,
     exibir_feminino,
     exibir_masculino,
     exibir_outro

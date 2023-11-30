@@ -329,6 +329,30 @@ function exibir_post2(req, res){
         res.status(200).json(resultado);
       });
 }
+function exibir_post3(req, res){
+    usuarioModel.exibir_post3().then((resultado) => {
+        res.status(200).json(resultado);
+      });
+}
+function exibir_post4(req, res){
+    usuarioModel.exibir_post4().then((resultado) => {
+        res.status(200).json(resultado);
+      });
+}
+function exibir_post5(req, res){
+    usuarioModel.exibir_post5().then((resultado) => {
+        res.status(200).json(resultado);
+      });
+}
+function exibir_post6(req, res){
+    usuarioModel.exibir_post6().then((resultado) => {
+        res.status(200).json(resultado);
+      });
+}
+
+
+
+
 
 function de0_a12(req, res){
     usuarioModel.de0_a12().then((resultado) => {
@@ -408,10 +432,14 @@ function exibir_feminino(req, res){
 
 function exibir_masculino(req, res){
     usuarioModel.exibir_masculino().then((resultado) => {
+
         if(resultado.length > 0){
             const genero_masculino = resultado[0]['COUNT(genero)'];
             res.status(200).json({genero_masculino: genero_masculino});
-        }else{
+
+        }
+        
+        else{
             res.status(204).json([]);
         }
     }
@@ -442,6 +470,10 @@ module.exports = {
     comentar_6, 
     exibir_post1,
     exibir_post2,
+    exibir_post3,
+    exibir_post4,
+    exibir_post5,
+    exibir_post6,
     de0_a12,
     de13_a19,
     de20_a25, 

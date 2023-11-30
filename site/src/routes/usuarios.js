@@ -86,6 +86,18 @@ router.get("/exibir_post1", function (req, res) {
 router.get("/exibir_post2", function (req, res) {
     usuarioController.exibir_post2(req, res);
 }); 
+router.get("/exibir_post3", function (req, res) {
+    usuarioController.exibir_post3(req, res);
+}); 
+router.get("/exibir_post4", function (req, res) {
+    usuarioController.exibir_post4(req, res);
+}); 
+router.get("/exibir_post5", function (req, res) {
+    usuarioController.exibir_post5(req, res);
+}); 
+router.get("/exibir_post6", function (req, res) {
+    usuarioController.exibir_post6(req, res);
+}); 
 
 
 

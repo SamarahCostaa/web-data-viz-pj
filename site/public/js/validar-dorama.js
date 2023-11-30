@@ -206,14 +206,14 @@ function comentar_6(idPost){
 function apagar(){
     div_comentario1.innerHTML =  ``;
     div_comentario2.innerHTML =  ``;
+    div_comentario3.innerHTML =  ``;
+    div_comentario4.innerHTML =  ``;
+    div_comentario5.innerHTML =  ``;
+    div_comentario6.innerHTML =  ``;
 }
 
 window.onload = function(){
-  exibir_post1()
-}
-
-window.onload = function(){
-  exibir_post2()
+  exibir_post1(), exibir_post2(), exibir_post3(), exibir_post4(), exibir_post5(), exibir_post6() 
 }
 
 function exibir_post1(){
@@ -289,6 +289,166 @@ function exibir_post2(){
       var nome_atual = nome_vetor2[i].nome;
  
       div_comentario2.innerHTML += `<br>${nome_atual}: ${comentario_Atual}<br>`;
+     }
+   });
+}
+
+function exibir_post3(){
+   /*Pegando o id da div*/
+   var div_comentario3 = document.getElementById('div_comentario3');
+
+   /*Criando vetores que receberão os json do banco*/
+   var comentarios_vetor3 = [];
+   var nome_vetor3 = [];
+
+  //  comentarios_vetor3.push( comentario_post3)
+ 
+     /*Pegando insformações que já existem no banco*/
+     fetch("/usuarios/exibir_post3", { 
+        method: "GET", 
+      })     
+ 
+     .then(function (resposta) {
+        if (!resposta.ok) { 
+          throw new Error('Erro na requisição');
+         }
+        return resposta.json();
+       })
+
+      /*Criando uma função anonima, e na 'resposta' será armazenado os dados coletados antes*/ 
+     .then((resposta) => { 
+      comentarios_vetor3 = resposta;
+      nome_vetor3 = resposta;
+      
+      var tamanho_comentario3 = comentarios_vetor3.length;
+      var tamanho_nome3 = nome_vetor3.length;
+ 
+     for (var i = 0; i < tamanho_comentario3; i++) {
+ 
+      var comentario_Atual = comentarios_vetor3[i].descricao;
+      var nome_atual = nome_vetor3[i].nome;
+ 
+      div_comentario3.innerHTML += `<br>${nome_atual}: ${comentario_Atual}<br>`;
+     }
+   });
+}
+
+function exibir_post4(){
+   /*Pegando o id da div*/
+   var div_comentario4 = document.getElementById('div_comentario4');
+
+   /*Criando vetores que receberão os json do banco*/
+   var comentarios_vetor4 = [];
+   var nome_vetor4 = [];
+
+  //  comentarios_vetor4.push( comentario_post4)
+ 
+     /*Pegando insformações que já existem no banco*/
+     fetch("/usuarios/exibir_post4", { 
+        method: "GET", 
+      })     
+ 
+     .then(function (resposta) {
+        if (!resposta.ok) { 
+          throw new Error('Erro na requisição');
+         }
+        return resposta.json();
+       })
+
+      /*Criando uma função anonima, e na 'resposta' será armazenado os dados coletados antes*/ 
+     .then((resposta) => { 
+      comentarios_vetor4 = resposta;
+      nome_vetor4 = resposta;
+      
+      var tamanho_comentario4 = comentarios_vetor4.length;
+      var tamanho_nome4 = nome_vetor4.length;
+ 
+     for (var i = 0; i < tamanho_comentario4; i++) {
+ 
+      var comentario_Atual = comentarios_vetor4[i].descricao;
+      var nome_atual = nome_vetor4[i].nome;
+ 
+      div_comentario4.innerHTML += `<br>${nome_atual}: ${comentario_Atual}<br>`;
+     }
+   });
+}
+
+function exibir_post5(){
+   /*Pegando o id da div*/
+   var div_comentario5 = document.getElementById('div_comentario5');
+
+   /*Criando vetores que receberão os json do banco*/
+   var comentarios_vetor5 = [];
+   var nome_vetor5 = [];
+
+  //  comentarios_vetor5.push( comentario_post5)
+ 
+     /*Pegando insformações que já existem no banco*/
+     fetch("/usuarios/exibir_post5", { 
+        method: "GET", 
+      })     
+ 
+     .then(function (resposta) {
+        if (!resposta.ok) { 
+          throw new Error('Erro na requisição');
+         }
+        return resposta.json();
+       })
+
+      /*Criando uma função anonima, e na 'resposta' será armazenado os dados coletados antes*/ 
+     .then((resposta) => { 
+      comentarios_vetor5 = resposta;
+      nome_vetor5 = resposta;
+      
+      var tamanho_comentario5 = comentarios_vetor5.length;
+      var tamanho_nome5 = nome_vetor5.length;
+ 
+     for (var i = 0; i < tamanho_comentario5; i++) {
+ 
+      var comentario_Atual = comentarios_vetor5[i].descricao;
+      var nome_atual = nome_vetor5[i].nome;
+ 
+      div_comentario5.innerHTML += `<br>${nome_atual}: ${comentario_Atual}<br>`;
+     }
+   });
+}
+
+function exibir_post6(){
+   /*Pegando o id da div*/
+   var div_comentario6 = document.getElementById('div_comentario6');
+
+   /*Criando vetores que receberão os json do banco*/
+   var comentarios_vetor6 = [];
+   var nome_vetor6 = [];
+
+  //  comentarios_vetor6.push( comentario_post6)
+ 
+     /*Pegando insformações que já existem no banco*/
+     fetch("/usuarios/exibir_post6", { 
+        method: "GET", 
+      })     
+ 
+     .then(function (resposta) {
+        if (!resposta.ok) { 
+          throw new Error('Erro na requisição');
+         }
+        return resposta.json();
+       })
+
+      /*Criando uma função anonima, e na 'resposta' será armazenado os dados coletados antes*/ 
+     .then((resposta) => { 
+      comentarios_vetor6 = resposta;
+      nome_vetor6 = resposta;
+      
+      var tamanho_comentario6 = comentarios_vetor6.length;
+      var tamanho_nome6 = nome_vetor6.length;
+ 
+     for (var i = 0; i < tamanho_comentario6; i++) {
+ 
+      var comentario_Atual = comentarios_vetor6[i].descricao;
+      var nome_atual = nome_vetor6[i].nome;
+ 
+      div_comentario6.innerHTML += `<br>${nome_atual}: ${comentario_Atual}<br>`;
      }
    });
 }
